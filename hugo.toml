@@ -1,3 +1,42 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseurl      = "https://miles-ya.github.io/Blog/"
+title        = "不想长大"
+languageCode = "zh-CN"
+theme        = "hello-friend-ng"
+logoText = "你好"
+
+[pagination]
+paginate     = 10
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
+
+  # 首页的副标题（显示在主标题下方）
+  homeSubtitle = "阅读，写作，看世界。"
+
+  # 禁用阅读其他文章的链接。 设置为 true 则隐藏文章结尾的其他文章链接。
+  disableReadOtherPosts = false
+
+  # 启用分享按钮。 设置为 true 则显示社交分享按钮。
+  enableSharingButtons = true
+  
+  # 在导航栏中显示全局语言切换菜单。 设置为 true 则启用多语言切换菜单
+  enableGlobalLanguageMenu = false
+
+  # 网站的描述（用于 HTML 的 <meta> 标签，对 SEO 有用）。
+  description = "不想长大的博客"
+  keywords = "homepage, blog"
+  images = [""]
+
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
+
+  # And you can even create generic menu
+  [[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/posts"
