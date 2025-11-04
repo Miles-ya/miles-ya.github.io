@@ -4,8 +4,8 @@
 
 ## 一点想法
 拥有一个博客是我一直以来渴望做的事。
-之前我也在腾讯云上使用wordepress建过一个网站，但是因为云主机的续费费用超出了我这个穷学生的预算，便不了了之。
-github pages我也折腾了好几次，从hexo到现在的hugo始终直到现在才成功跑通从写作到发布的整个链条。
+之前我也在腾讯云上使用 Wordpress 建过一个网站，但是因为云主机的续费费用超出了我这个穷学生的预算，便不了了之。
+Github pages 我也折腾了好几次，从 Hexo 到现在的 Hugo 始终直到现在才成功跑通从写作到发布的整个链条。
 
 至于为什么要建站，还是想有一个可以自由表达的地方，可以不为了流量和金钱，只为自由自在地表达。
 
@@ -18,7 +18,7 @@ github pages我也折腾了好几次，从hexo到现在的hugo始终直到现在
 ## 技术栈
 
 - [Obsidian](https://obsidian.md/) - Markdown 编辑器，用于内容创作和管理
-- [Obsidian Enhanced Publisher](https://github.com/Mara-Li/obsidian-publisher) - Obsidian 发布插件
+- [Obsidian static site export](https://github.com/yy4382/obsidian-static-site-export) - Obsidian 发布插件
 - [Hugo](https://gohugo.io/) - 静态网站生成器
 - [Hello Friend NG](https://github.com/rhazdon/hugo-theme-hello-friend-ng) - Hugo 主题
 - GitHub Pages - 网站托管
@@ -42,7 +42,7 @@ github pages我也折腾了好几次，从hexo到现在的hugo始终直到现在
 - **非商业性使用** — 您不得将本作品用于商业目的。
 - **禁止演绎** — 如果您混合、转换、或者基于本作品进行创作，您不得分发修改后的作品。
 
-主题 hello-friend-ng 的许可证请参见 [themes/hello-friend-ng/LICENSE.md](themes/hello-friend-ng/LICENSE.md)。
+主题 hello-friend-ng 的许可证请参见 [hello-friend-ng/LICENSE.md](https://github.com/rhazdon/hugo-theme-hello-friend-ng/blob/37fbce29a55302ee523671d19b62327399608852/LICENSE.md)。
 
 
 ## 作者
