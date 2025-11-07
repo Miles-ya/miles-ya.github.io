@@ -35,8 +35,29 @@ paginate     = 10
     tag      = "tags"
     series   = "series"
 
-  # And you can even create generic menu
-  [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/posts"
+
+# 主导航菜单配置
+# 1. 关于
+[[menu.main]]
+  identifier = "关于"
+  name = "关于"
+  url = "/about/"
+  weight = -30  # 设为负数，保证排在最前面
+
+[[menu.main]]
+  identifier = "归档"
+  name = "归档"
+  url = "/archives"
+  weight = -20  # 第二位
+
+[[menu.main]]
+  identifier = "分类"
+  name = "分类"
+  url = "/tags" 
+  weight = -10  # 第三位
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # 允许原始 HTML 在 Markdown 中渲染
+      unsafe = true
