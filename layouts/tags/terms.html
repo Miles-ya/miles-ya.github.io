@@ -1,0 +1,53 @@
+{{ define "main" }}
+<main class="posts">
+    <h1>{{ .Title }}</h1>
+
+    {{ if .Content }}
+        <div class="content">{{ .Content }}</div>
+    {{ end }}
+
+    <style>
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-start;
+            padding-top: 20px;
+        }
+        .tag-box {
+            display: block;
+            width: 150px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+        }
+        .tag-box:hover {
+            border-color: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .tag-box .tag-name {
+            font-weight: 500;
+            display: block;
+        }
+        .tag-box .tag-count {
+            font-size: 0.85em;
+            color: #666;
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+
+    <div class="tag-cloud">
+        {{ range .Data.Terms.ByCount }}
+            <a href="{{ .Page.Permalink }}" class="tag-box">
+                <span class="tag-name">{{ .Page.Title }}</span>
+                <span class="tag-count">{{ .Count }} 篇</span>
+            </a>
+        {{ end }}
+    </div>
+</main>
+{{ end }}

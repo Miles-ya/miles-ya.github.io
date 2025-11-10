@@ -1,42 +1,252 @@
-baseurl      = "https://miles-ya.github.io/Blog/"
-title        = "不想长大"
-languageCode = "zh-CN"
-theme        = "hello-friend-ng"
-logoText = "你好"
+baseURL = "https://example.com"
+title   = "千里之行"
+languageCode = "zh-cn"
+theme = "hello-friend-ng"
+
+PygmentsCodeFences = true
+PygmentsStyle = "monokai"
+
+copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
+
+buildDrafts  = false
+buildFuture  = false
+buildExpired = false
+canonifyURLs = true
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+enableMissingTranslationPlaceholders = false
+disableRSS     = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = false
 
 [pagination]
-paginate     = 10
+  disableAliases = false
+  pagerSize = 20
+  path = 'page'
+
+[services]
+  [services.rss]
+      # RSS feed 中项目的最大数量。
+      limit = 42
+      
+#   [services.disqus]
+#     shortname = 'your-disqus-shortname'
+#   [services.googleAnalytics]
+#     ID = 'G-MEASUREMENT_ID'
+
+[permalinks]
+  posts = "/posts/:year/:month/:title/"
+
+[blackfriday]
+  hrefTargetBlank = true
+
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
+  series   = "series"
 
 [params]
-  dateform        = "Jan 2, 2006"
-  dateformShort   = "Jan 2"
+  dateform        = "2006年1月2日"
+  dateformShort   = "1月2日"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
 
-  # 首页的副标题（显示在主标题下方）
-  homeSubtitle = "阅读，写作，看世界。"
-
-  # 禁用阅读其他文章的链接。 设置为 true 则隐藏文章结尾的其他文章链接。
-  disableReadOtherPosts = false
-
-  # 启用分享按钮。 设置为 true 则显示社交分享按钮。
-  enableSharingButtons = true
-  
-  # 在导航栏中显示全局语言切换菜单。 设置为 true 则启用多语言切换菜单
-  enableGlobalLanguageMenu = false
-
-  # 网站的描述（用于 HTML 的 <meta> 标签，对 SEO 有用）。
-  description = "不想长大的博客"
-  keywords = "homepage, blog"
+  # 主要用于文档头部的元数据
+  # 
+  description = "一个关于阅读、写作和生活感悟的个人博客，分享技术心得、学习笔记和成长思考。"
+  keywords = "个人博客, 技术分享, 生活感悟, 阅读笔记, 学习心得"
   images = [""]
 
-[taxonomies]
-    category = "blog"
-    tag      = "tags"
-    series   = "series"
+  # 索引页的首页副标题。
+  #
+  homeSubtitle = "阅读，写作，看世界。"
 
-  # And you can even create generic menu
+  # 设置首页背景
+  # backgroundImage = "assets/images/background.jpg"
+
+  # Git 提交详情页链接的前缀。必须启用 GitInfo。
+  #
+  # gitUrl = ""
+
+  # 将 disableReadOtherPosts 设置为 true 以隐藏到其他文章的链接。
+  #
+  disableReadOtherPosts = false
+
+  # 启用主题切换
+  # 
+  # 此选项启用主题的切换功能。
+  # 默认情况下，此选项是关闭的。
+  # 主题会遵循操作系统的 prefers-color-scheme 设置。
+  # 启用此选项后，页面用户可以设置他想要的主题方案。
+  enableThemeToggle = true 
+
+  # 分享按钮
+  #
+  # 预配置了许多按钮。如果您想更改它们，
+  # 请在此处生成按钮：https://sharingbuttons.io
+  # 并将它们添加到您自己的 `layouts/partials/sharing-buttons.html` 中
+  #
+  enableSharingButtons = true
+
+  # 全局语言菜单
+  #
+  # 启用全局语言菜单。
+  #
+  enableGlobalLanguageMenu = false
+
+  # 通过添加外部资源的 url 或链接到本地文件（路径相对于 static 文件夹，例如 "css/styles.css"）来集成 Javascript 文件或样式表
+  #
+  customCSS = []
+  customJS  = []
+
+  # 切换此选项需要重建 SCSS，需要 Hugo extended 版本
+  #
+  justifyContent = false  # 为 .post-content 设置 "text-align: justify"。
+
+  # 集成 Plausible.io
+  # plausibleDataDomain = 'test.com'
+  # plausibleScriptSource = 'https://plausible.io/js/script.js'
+
+  [params.author]
+    name = "Miles-ya" 
+
+  # 自定义页脚
+  # 如果您愿意，可以轻松地用您自己的内容覆盖默认页脚。
+  #
+  [params.footer]
+    trademark = 2025
+    rss = true
+    copyright = true
+    author = true
+
+    topText = []
+    bottomText = [
+      "由 <a href=\"http://gohugo.io\">Hugo</a> 驱动",
+      "由 <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a> 用 &#10084; 制作"
+    ]
+
+  # 用于 Favicon 的颜色
+  #
+  [params.favicon.color]
+    mask = "#1b1c1d"
+    msapplication = "#1b1c1d"
+    theme = "#1b1c1d"
+
+  [params.logo]
+    logoMark     = ">"
+    logoText     = "$ cd /home/"
+    logoHomeLink = "/"
+    # 设置为 true 以完全移除标志光标。
+    # logoCursorDisabled = false
+    # 设置为有效的 CSS 颜色以更改标志中的光标。
+    # logoCursorColor    = "#67a2c9"
+    # 设置为有效的 CSS 时间值以更改动画持续时间，"0s" 禁用。
+    # logoCursorAnimate  = "2s"
+    # 将当前的 url 路径名附加到 logoText 
+    # logoCursorPathname = true
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # 插件：首页肖像
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  # 如果您想在起始页上显示肖像，请取消注释
+  #
+  # [params.portrait]
+  #   path     = "/img/image.jpg"
+  #   alt      = "肖像"
+  #   maxWidth = "50px"
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # 插件：Commento
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  # Commento 不仅仅是一个您可以嵌入的评论小部件，
+  # 它还是互联网的回归本源。
+  # 一个没有追踪和侵犯隐私的互联网。
+  # 一个简单且轻量级的互联网。
+  # 一个专注于有趣讨论而非广告的互联网。
+  # 一个更好的互联网。
+  # 取消注释以启用 Commento。
+  #
+  # [params.commento]
+  #   url = ""
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # 插件：Utteranc.es
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  # Utteranc.es 是一个基于 GitHub issues 构建的轻量级评论小部件。
+  # 请参阅 https://utteranc.es/ 获取文档
+  # 取消注释以启用 Utteranc.es。
+  #
+  # [params.utterances]
+  #   您的 GitHub 仓库
+  #
+  #   repository = ""
+  #
+  #   用于 GitHub issues 的标签
+  #
+  #   label      = ""
+  # 
+  #   博客文章 <-> Issue 映射。此参数可选。可能的值有：
+  #      - pathname
+  #      - url
+  #      - title
+  #      - og:title
+  #      - issue number
+  #      - specific term
+  #
+  #   issueTerm  = ""
+  #
+  #   使用的主题：可能的值有：
+  #      - github-light
+  #      - github-dark
+  #      - preferred-color-scheme
+  #      - github-dark-orange
+  #      - icy-dark
+  #      - dark-blue
+  #      - photon-dark
+  #      - boxy-light
+  #      - gruvbox-dark
+  #
+  #   theme      = ""
+  # 
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # 插件：社交图标
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  #
+  [[params.social]]
+    name = "X"
+    url  = "https://x.com/Henry____Liu"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:gqqbzl@outlook.com"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/Miles-ya"
+
+[menu]
   [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/posts"
+    identifier = "about"
+    name       = "关于"
+    url        = "about/"
+    weight = 3 
+  [[menu.main]]
+    identifier = "tags"
+    name       = "分类"
+    url        = "tags/"
+    weight = 2
+  [[menu.main]]
+    identifier = "posts"
+    name       = "文章"
+    url        = "posts/"
+    weight = 1

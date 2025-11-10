@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content=" 赛前小记 | 往期视频总结 二分题单: https://www.luogu.com.cn/training/111
+双指针题单: https://rentry.org/d4y8o2dn
+DFS题单: https://rentry.org/5yhk52ow
+BFS题单: https://rentry.org/3r68rga7
+动态规划入门课题单: https://rentry.org/2f76axt4
+动态规划习题课题单: https://rentry.org/ozd34yrn
+赛前小记: https://rentry.org/5p2wa89m
+首先是蓝桥杯的注意事项： 比赛前试好鼠标、键盘等设备，有问题要举手告诉监考老师
+先想清楚思路怎么做再写代码，防止题目读假了。 请将题目通读完以后，再开始深入思考开始写你认为最容易的一道题。 为了方便，可以使用万能头文件 ** ‘ ** 一维 int 型数组记最大可以开到 1e7 。 C&#43;&#43; 一秒最多 5e8 次，建议记成 1e8 &mdash; 1e9，java py？ 如果不会做了想暴力枚举的话，每题1s的限时，所以暴力枚举两个for嵌套，每个for最多可以运行10000次，三个for嵌套，每个for最多可以运行464次，大家做题的时候根据题目给的数据范围，可以估算一下暴力的话会不会超时。
+int 型变量最大记为 2e9 , long long 最大记为 1e18 （其实是9e18，主要记数量级），OI 赛制 不开long long见祖宗！ 输入输出建议直接使用 scanf 和 printf ，或者ios加速后的 cin 和 cout ，但切记使用加速命令后cin cout 不要同时和 scanf 和 printf 一起使用。 直接放入 main() 函数开头即可。
+输出的时候如果两个数字间有空格的话记得输出需要 printf(&quot;%d %d\n&quot;, a, b); （往期很多同学都会犯）
+" />
+<meta name="keywords" content="个人博客, 技术分享, 生活感悟, 阅读笔记, 学习心得, 课程笔记, 算法, 蓝桥杯" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/posts/2025/11/%E8%93%9D%E6%A1%A5%E8%B5%9B%E5%89%8D%E5%B0%8F%E8%AE%B0-%E5%BE%80%E6%9C%9F%E8%A7%86%E9%A2%91%E6%80%BB%E7%BB%93/" />
+
+
+    <title>
+        
+            蓝桥赛前小记 往期视频总结 :: 千里之行 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="http://localhost:1313/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+    <link rel="manifest" href="http://localhost:1313/site.webmanifest">
+    <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="http://localhost:1313/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="蓝桥赛前小记 往期视频总结">
+  <meta itemprop="description" content="赛前小记 | 往期视频总结 二分题单: https://www.luogu.com.cn/training/111
+双指针题单: https://rentry.org/d4y8o2dn
+DFS题单: https://rentry.org/5yhk52ow
+BFS题单: https://rentry.org/3r68rga7
+动态规划入门课题单: https://rentry.org/2f76axt4
+动态规划习题课题单: https://rentry.org/ozd34yrn
+赛前小记: https://rentry.org/5p2wa89m
+首先是蓝桥杯的注意事项： 比赛前试好鼠标、键盘等设备，有问题要举手告诉监考老师
+先想清楚思路怎么做再写代码，防止题目读假了。 请将题目通读完以后，再开始深入思考开始写你认为最容易的一道题。 为了方便，可以使用万能头文件 ** ‘ ** 一维 int 型数组记最大可以开到 1e7 。 C&#43;&#43; 一秒最多 5e8 次，建议记成 1e8 — 1e9，java py？ 如果不会做了想暴力枚举的话，每题1s的限时，所以暴力枚举两个for嵌套，每个for最多可以运行10000次，三个for嵌套，每个for最多可以运行464次，大家做题的时候根据题目给的数据范围，可以估算一下暴力的话会不会超时。
+int 型变量最大记为 2e9 , long long 最大记为 1e18 （其实是9e18，主要记数量级），OI 赛制 不开long long见祖宗！ 输入输出建议直接使用 scanf 和 printf ，或者ios加速后的 cin 和 cout ，但切记使用加速命令后cin cout 不要同时和 scanf 和 printf 一起使用。 直接放入 main() 函数开头即可。
+输出的时候如果两个数字间有空格的话记得输出需要 printf(&#34;%d %d\n&#34;, a, b); （往期很多同学都会犯）">
+  <meta itemprop="datePublished" content="2025-11-07T15:28:52+00:00">
+  <meta itemprop="dateModified" content="2025-11-07T15:28:52+00:00">
+  <meta itemprop="wordCount" content="963">
+  <meta itemprop="image" content="http://localhost:1313/">
+  <meta itemprop="keywords" content="课程笔记,算法,蓝桥杯">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/">
+  <meta name="twitter:title" content="蓝桥赛前小记 往期视频总结">
+  <meta name="twitter:description" content="赛前小记 | 往期视频总结 二分题单: https://www.luogu.com.cn/training/111
+双指针题单: https://rentry.org/d4y8o2dn
+DFS题单: https://rentry.org/5yhk52ow
+BFS题单: https://rentry.org/3r68rga7
+动态规划入门课题单: https://rentry.org/2f76axt4
+动态规划习题课题单: https://rentry.org/ozd34yrn
+赛前小记: https://rentry.org/5p2wa89m
+首先是蓝桥杯的注意事项： 比赛前试好鼠标、键盘等设备，有问题要举手告诉监考老师
+先想清楚思路怎么做再写代码，防止题目读假了。 请将题目通读完以后，再开始深入思考开始写你认为最容易的一道题。 为了方便，可以使用万能头文件 ** ‘ ** 一维 int 型数组记最大可以开到 1e7 。 C&#43;&#43; 一秒最多 5e8 次，建议记成 1e8 — 1e9，java py？ 如果不会做了想暴力枚举的话，每题1s的限时，所以暴力枚举两个for嵌套，每个for最多可以运行10000次，三个for嵌套，每个for最多可以运行464次，大家做题的时候根据题目给的数据范围，可以估算一下暴力的话会不会超时。
+int 型变量最大记为 2e9 , long long 最大记为 1e18 （其实是9e18，主要记数量级），OI 赛制 不开long long见祖宗！ 输入输出建议直接使用 scanf 和 printf ，或者ios加速后的 cin 和 cout ，但切记使用加速命令后cin cout 不要同时和 scanf 和 printf 一起使用。 直接放入 main() 函数开头即可。
+输出的时候如果两个数字间有空格的话记得输出需要 printf(&#34;%d %d\n&#34;, a, b); （往期很多同学都会犯）">
+
+
+
+    <meta property="og:url" content="http://localhost:1313/posts/2025/11/%E8%93%9D%E6%A1%A5%E8%B5%9B%E5%89%8D%E5%B0%8F%E8%AE%B0-%E5%BE%80%E6%9C%9F%E8%A7%86%E9%A2%91%E6%80%BB%E7%BB%93/">
+  <meta property="og:site_name" content="千里之行">
+  <meta property="og:title" content="蓝桥赛前小记 往期视频总结">
+  <meta property="og:description" content="赛前小记 | 往期视频总结 二分题单: https://www.luogu.com.cn/training/111
+双指针题单: https://rentry.org/d4y8o2dn
+DFS题单: https://rentry.org/5yhk52ow
+BFS题单: https://rentry.org/3r68rga7
+动态规划入门课题单: https://rentry.org/2f76axt4
+动态规划习题课题单: https://rentry.org/ozd34yrn
+赛前小记: https://rentry.org/5p2wa89m
+首先是蓝桥杯的注意事项： 比赛前试好鼠标、键盘等设备，有问题要举手告诉监考老师
+先想清楚思路怎么做再写代码，防止题目读假了。 请将题目通读完以后，再开始深入思考开始写你认为最容易的一道题。 为了方便，可以使用万能头文件 ** ‘ ** 一维 int 型数组记最大可以开到 1e7 。 C&#43;&#43; 一秒最多 5e8 次，建议记成 1e8 — 1e9，java py？ 如果不会做了想暴力枚举的话，每题1s的限时，所以暴力枚举两个for嵌套，每个for最多可以运行10000次，三个for嵌套，每个for最多可以运行464次，大家做题的时候根据题目给的数据范围，可以估算一下暴力的话会不会超时。
+int 型变量最大记为 2e9 , long long 最大记为 1e18 （其实是9e18，主要记数量级），OI 赛制 不开long long见祖宗！ 输入输出建议直接使用 scanf 和 printf ，或者ios加速后的 cin 和 cout ，但切记使用加速命令后cin cout 不要同时和 scanf 和 printf 一起使用。 直接放入 main() 函数开头即可。
+输出的时候如果两个数字间有空格的话记得输出需要 printf(&#34;%d %d\n&#34;, a, b); （往期很多同学都会犯）">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-11-07T15:28:52+00:00">
+    <meta property="article:modified_time" content="2025-11-07T15:28:52+00:00">
+    <meta property="article:tag" content="课程笔记">
+    <meta property="article:tag" content="算法">
+    <meta property="article:tag" content="蓝桥杯">
+    <meta property="og:image" content="http://localhost:1313/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2025-11-07 15:28:52 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="http://localhost:1313/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="http://localhost:1313/posts/">文章</a></li><li><a href="http://localhost:1313/tags/">分类</a></li><li><a href="http://localhost:1313/about/">关于</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        5 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="http://localhost:1313/posts/2025/11/%E8%93%9D%E6%A1%A5%E8%B5%9B%E5%89%8D%E5%B0%8F%E8%AE%B0-%E5%BE%80%E6%9C%9F%E8%A7%86%E9%A2%91%E6%80%BB%E7%BB%93/">蓝桥赛前小记 往期视频总结</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <hr>
+<h1 id="赛前小记--往期视频总结">赛前小记 | 往期视频总结</h1>
+<p>二分题单: <a href="https://www.luogu.com.cn/training/111">https://www.luogu.com.cn/training/111</a></p>
+<p>双指针题单: <a href="https://rentry.org/d4y8o2dn">https://rentry.org/d4y8o2dn</a></p>
+<p>DFS题单: <a href="https://rentry.org/5yhk52ow">https://rentry.org/5yhk52ow</a></p>
+<p>BFS题单: <a href="https://rentry.org/3r68rga7">https://rentry.org/3r68rga7</a></p>
+<p>动态规划入门课题单: <a href="https://rentry.org/2f76axt4">https://rentry.org/2f76axt4</a></p>
+<p>动态规划习题课题单:  https://rentry.org/ozd34yrn</p>
+<p>赛前小记: <a href="https://rentry.org/5p2wa89m">https://rentry.org/5p2wa89m</a></p>
+<h3 id="首先是蓝桥杯的注意事项">首先是蓝桥杯的注意事项：</h3>
+<p>比赛前试好鼠标、键盘等设备，有问题要举手告诉监考老师</p>
+<ol>
+<li>先想清楚思路怎么做再写代码，防止题目读假了。</li>
+<li>请将题目通读完以后，再开始深入思考开始写你认为最容易的一道题。</li>
+<li>为了方便，可以使用万能头文件 ** ‘ **</li>
+<li><strong>一维</strong> <code>int</code> 型数组记最大可以开到 <strong>1e7</strong> 。</li>
+<li><strong>C++</strong> 一秒最多 <strong>5e8</strong> 次，建议记成 <strong>1e8</strong> &mdash; 1e9，java py？</li>
+</ol>
+<blockquote>
+<p>如果不会做了想暴力枚举的话，每题1s的限时，所以暴力枚举两个for嵌套，每个for最多可以运行10000次，三个for嵌套，每个for最多可以运行464次，大家做题的时候根据题目给的数据范围，可以估算一下暴力的话会不会超时。</p>
+</blockquote>
+<ol start="6">
+<li><code>int</code>  型变量最大记为 <strong>2e9</strong>  , <code>long long</code> 最大记为 <strong>1e18</strong> （其实是9e18，主要记数量级），OI 赛制 <strong>不开long long见祖宗！</strong></li>
+<li>输入输出建议直接使用 <code>scanf</code> 和 <code>printf</code> ，或者ios加速后的 <code>cin</code> 和 <code>cout</code> ，但<strong>切记</strong>使用加速命令后<code>cin</code> <code>cout</code> 不要同时和 <code>scanf</code> 和 <code>printf</code> 一起使用。</li>
+</ol>
+<p><img src="https://dn-simplecloud.shiyanlou.com/questions/uid1736686-20240410-1712735485378" alt="图片描述"> 直接放入 <code>main()</code> 函数开头即可。</p>
+<ol start="8">
+<li>
+<p>输出的时候如果两个数字间有空格的话记得输出需要 <code> printf(&quot;%d %d\n&quot;, a, b);</code> （往期很多同学都会犯）</p>
+</li>
+<li>
+<p>大家如果平时不常用 debug 功能的话，可以去在关键处使用 <strong>printf 大法</strong> 去打印出<strong>关键变量（或者数组中的元素）</strong>，思考一下写的代码和思路的结果是否相同。</p>
+</li>
+<li>
+<p>题目的样例给的很少，可以自己去<strong>造几组数据</strong>进行测试（最好<strong>造边界、极端情况</strong> ），考虑有没有负值、有没有特殊样例、有没有可能爆变量的最大值。</p>
+</li>
+<li>
+<p>代码全都写进主函数有点难以调试，可以去 <strong>分块写</strong> 函数，哪里错了看哪里</p>
+</li>
+<li>
+<p>最好熟悉使用一下 <strong>stl</strong> 的数据结构 string , map, set,queue, stack, priority_queue, vector等；同时最好也熟悉 stl 里的函数</p>
+</li>
+</ol>
+<p>尽管可以直接现查赛时提供的 <strong>帮助手册</strong> ，但还是建议去用一用熟悉一下。</p>
+<pre tabindex="0"><code class="language-lower_bound()" data-lang="lower_bound()">upper_bound() \ lower_bound()
+find()
+count()
+substr()
+sort()
+reverse() 
+unique()
+stoi(s)
+atoi(s)
+to_string()
+等等...
+</code></pre><p>推荐个STL的网站：https://wyqz.top/p/870124582.html 比较好看~</p>
+<ol start="13">
+<li>基于 OI 赛制，可以<strong>先想暴力</strong>，再去想算法去优化时间/空间。
+<ol>
+<li>暴力即 枚举所有可能的答案，选最优的，也就是题目问什么就去枚举什么。</li>
+<li>如果可以的话，直接模拟题目陈述的步骤即可。</li>
+</ol>
+</li>
+<li>对于 <strong>暴力</strong> 的方法，基本有以下几种：
+<ol>
+<li>for循环直接枚举 数组\或者答案，（如果是答案的话立即想一下是否可以二分答案）</li>
+<li>枚举<strong>排列组合</strong>的方案：dfs 飞机降落</li>
+<li>想要找规律，可以直接写程序去找，而不是脑子硬想。</li>
+<li>打表：可以在本地一直跑，跑出答案直接写到数组里，交程序时候直接读出数组中计算好的答案即可。</li>
+<li>图论中暴力即 DFS、BFS 遍历所有点，最好去<strong>背背板子</strong>。</li>
+</ol>
+</li>
+<li>根据数据范围 <strong>反推</strong> 算法时间复杂度</li>
+</ol>
+<p><img src="https://dn-simplecloud.shiyanlou.com/questions/uid1736686-20240410-1712735532720" alt="图片描述"></p>
+<p><a href="https://www.acwing.com/file_system/file/content/whole/index/content/3074/">由数据范围反推算法复杂度以及算法内容 - AcWing</a></p>
+<h3 id="二分">二分</h3>
+<p>首先，二分查找的模板在此</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">100010</span>;  <span style="color:#75715e">//根据题目中n的范围来确定数组应该开多大, 开的范围必须比n要大一点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n, q; <span style="color:#75715e">//n个数, q次询问
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> arr[N];  <span style="color:#75715e">//array
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//第一个二分查找找的是: 被询问数的第一次出现的位置(下标)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">binary_search1</span>(<span style="color:#66d9ef">int</span> arr[], <span style="color:#66d9ef">int</span> len, <span style="color:#66d9ef">int</span> x) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, r <span style="color:#f92672">=</span> len;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(l <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> r)   <span style="color:#75715e">//   l + 1 != r
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> (l <span style="color:#f92672">+</span> r) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(arr[mid] <span style="color:#f92672">&lt;</span> x) {
+</span></span><span style="display:flex;"><span>            l <span style="color:#f92672">=</span> mid;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> r <span style="color:#f92672">=</span> mid;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(arr[r] <span style="color:#f92672">==</span> x) <span style="color:#66d9ef">return</span> r;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;  <span style="color:#75715e">//找不到就返回-1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//第二个二分查找找的是: 被询问数的最后一次出现的位置(下标)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">binary_search2</span>(<span style="color:#66d9ef">int</span> arr[], <span style="color:#66d9ef">int</span> len, <span style="color:#66d9ef">int</span> x) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, r <span style="color:#f92672">=</span> len;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(l <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> r) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> (l <span style="color:#f92672">+</span> r) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(arr[mid] <span style="color:#f92672">&lt;=</span> x) {
+</span></span><span style="display:flex;"><span>            l <span style="color:#f92672">=</span> mid;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> r <span style="color:#f92672">=</span> mid;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(arr[l] <span style="color:#f92672">==</span> x) <span style="color:#66d9ef">return</span> l;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;  <span style="color:#75715e">//找不到就返回-1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>q);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i <span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>arr[i]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(q <span style="color:#f92672">--</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> x;
+</span></span><span style="display:flex;"><span>        scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> res1 <span style="color:#f92672">=</span> binary_search1(arr, n, x);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(res1 <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>            printf(<span style="color:#e6db74">&#34;-1 -1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> res2 <span style="color:#f92672">=</span> binary_search2(arr, n, x);
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;%d %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, res1, res2);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="关于二分需要注意的点">关于二分需要注意的点：</h4>
+<ol start="16">
+<li><strong>数组大小要开的大一点</strong>，比如题干给 $n \le 10000$ ，咱们最好开 $10010$ 大的数组，防止越界。</li>
+<li><strong>注意二分 $l, r$ 的取值</strong>，如果数组从下标为 $1$ 处开始存，则 $l = 0, r = n + 1$ ；如果从下标为 $0$ 处开始存，则 $l = -1, r = n$ 即可。</li>
+<li>要清楚<strong>边界线</strong>，以及怎么去划定自己需要的范围。</li>
+</ol>
+<p><img src="https://dn-simplecloud.shiyanlou.com/questions/uid1736686-20240410-1712735591404" alt="图片描述">    当取的值<strong>大过一个分界线之后</strong>，无论取哪个值都不可以满足条件。</p>
+<p><img src="https://dn-simplecloud.shiyanlou.com/questions/uid1736686-20240410-1712735609631" alt="图片描述"></p>
+<p>当取的值<strong>小过一个分界线之后</strong>，无论取哪个值都不可以满足条件。</p>
+<p><img src="https://dn-simplecloud.shiyanlou.com/questions/uid1736686-20240410-1712735629991" alt="图片描述"></p>
+<p><strong>相关视频</strong>（简介里有视频讲义和题目）</p>
+<p><a href="https://www.bilibili.com/video/BV1fA411z7ru/?spm_id_from=333.999.0.0">二分查找 | 妈妈再也不怕我写错二分啦 | 五点七边二分视频补充_哔哩哔哩_bilibili</a></p>
+<p><a href="https://www.bilibili.com/video/BV1RT41197Ln/?spm_id_from=333.999.0.0">二分习题课 | 手把手教你二分答案! | 超级细不听血亏_哔哩哔哩_bilibili</a></p>
+<p><a href="https://www.bilibili.com/video/BV1hG4y1N7jZ/?spm_id_from=333.999.0.0">二分习题课补充 | P2853路标设置_哔哩哔哩_bilibili</a> （第二种二分）</p>
+<p><a href="https://www.bilibili.com/video/BV1HD4y1K7iD/?spm_id_from=333.999.0.0">精讲浮点数二分 | 另一种二分应用场景_哔哩哔哩_bilibili</a></p>
+<h3 id="前缀和-和-差分">前缀和 和 差分</h3>
+<p>前缀和是指某序列的前 $n$ 项和，可以把它理解为数学上的数列的前 $n$ 项和，而差分可以看成前缀和的逆运算。合理的使用前缀和与差分，可以将某些复杂的问题简单化。</p>
+<p><img src="https://dn-simplecloud.shiyanlou.com/questions/uid1736686-20240410-1712735645419" alt="图片描述"></p>
+<p><img src="https://dn-simplecloud.shiyanlou.com/questions/uid1736686-20240410-1712735662592" alt="图片描述"></p>
+<h3 id="双指针">双指针</h3>
+<p>核心思想：<strong>优化暴力</strong> （一般都是把暴力的 $O(n ^2)$ 优化到 $O(n)$ ），维护一些具有<strong>单调性</strong>、可快速删减的区间信息。</p>
+<p><img src="https://dn-simplecloud.shiyanlou.com/questions/uid1736686-20240410-1712735677102" alt="图片描述"></p>
+<p><strong>注意：</strong></p>
+<ol start="19">
+<li>要保证两个指针的<strong>单调性</strong>，即<strong>不能回头走</strong> （如果向前走就一直向前走）。</li>
+<li>如果无序的话，可能需要先<strong>排个序</strong>。</li>
+<li>用到的基本是 <strong>快慢指针</strong> 和 <strong>对撞指针</strong>。</li>
+</ol>
+<p><strong>相关视频</strong>（简介里有视频讲义和题目）</p>
+<p><a href="https://www.bilibili.com/video/BV1rv4y1s7dJ/?spm_id_from=333.999.0.0">双指针 + 前缀和知识点课 | 一节课让你搞懂双指针思想!_哔哩哔哩_bilibili</a></p>
+<p><a href="https://www.bilibili.com/video/BV1BD4y1P7YF/?spm_id_from=333.999.0.0">双指针习题课 | 不听血亏 | 全新的思维方式_哔哩哔哩_bilibili</a></p>
+<h3 id="dfs---不撞南墙不回头">DFS - 不撞南墙不回头</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>()<span style="color:#75715e">//参数用来表示状态  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#960050;background-color:#1e0010">到达终点状态</span>)  
+</span></span><span style="display:flex;"><span>    {  
+</span></span><span style="display:flex;"><span>        ...<span style="color:#75715e">//根据题意添加  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span>;  
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#960050;background-color:#1e0010">越界或者是不合法状态</span>)  
+</span></span><span style="display:flex;"><span>        ...<span style="color:#75715e">//根据题意添加  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span>;  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#960050;background-color:#1e0010">特殊状态</span>)<span style="color:#75715e">//剪枝
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        ...<span style="color:#75715e">//根据题意添加  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> ;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#960050;background-color:#1e0010">扩展方式</span>)  
+</span></span><span style="display:flex;"><span>    {  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#960050;background-color:#1e0010">扩展方式所达到状态合法</span>)  
+</span></span><span style="display:flex;"><span>        {  
+</span></span><span style="display:flex;"><span>            <span style="color:#960050;background-color:#1e0010">修改操作</span>;<span style="color:#75715e">//根据题意来添加  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#960050;background-color:#1e0010">标记；</span>  
+</span></span><span style="display:flex;"><span>            dfs<span style="color:#960050;background-color:#1e0010">（）；</span>  
+</span></span><span style="display:flex;"><span>            (<span style="color:#960050;background-color:#1e0010">还原标记</span>)<span style="color:#960050;background-color:#1e0010">；</span>  
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//是否还原标记根据题意  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#75715e">//如果加上（还原标记）就是 回溯法  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>}  
+</span></span></code></pre></div><p><strong>注意：</strong></p>
+<ol start="22">
+<li>注意枚举的顺序，要做到对每个点都依次枚举到。</li>
+<li>注意输出方案时 $return$ 的位置。</li>
+<li>要从数据存入的第一个点开始依次搜（比如数组从 $1$ 开始存，那么 $dfs(1)$ ）。</li>
+<li>迷宫问题的方向数组别写错</li>
+<li>$dfs$​ 前可以预处理</li>
+</ol>
+<p><strong>相关视频</strong>（简介里有视频讲义和题目）</p>
+<p><a href="https://www.bilibili.com/video/BV1S24y1p7iH/?spm_id_from=333.999.0.0">递推与递归 + DFS | 手把手带你画出递归搜索树_哔哩哔哩_bilibili</a></p>
+<p><a href="https://www.bilibili.com/video/BV1N24y1W7q4/?spm_id_from=333.999.0.0">DFS正确入门方式 | DFS + 递归与递推习题课(上) | 一节课教你爆搜!_哔哩哔哩_bilibili</a></p>
+<p><a href="https://www.bilibili.com/video/BV1vy4y1Z7b2/?spm_id_from=333.999.0.0">DFS正确入门方式 | DFS + 递归与递推习题课(下) | 一节课教你爆搜!_哔哩哔哩_bilibili</a></p>
+<h3 id="bfs---一石惊起千层浪泛起层层涟漪">BFS - 一石惊起千层浪，泛起层层涟漪~</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> PII
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> bfs()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    queue<span style="color:#f92672">&lt;</span>PII<span style="color:#f92672">&gt;</span> q;    <span style="color:#75715e">//一般用stl库中的queue来实现队列比较方便
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    q.push(<span style="color:#960050;background-color:#1e0010">起点</span>S);    <span style="color:#75715e">//将初始状态入队
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#960050;background-color:#1e0010">标记初始状态已入队。</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>q.empty())<span style="color:#75715e">//队列不为空就执行入队出队操作
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span>        top <span style="color:#f92672">=</span> q.front();<span style="color:#75715e">//取出队头
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        q.pop();<span style="color:#75715e">//队首出队
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#960050;background-color:#1e0010">枚举所有可扩展的状态</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (check())<span style="color:#75715e">//状态合法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            {
+</span></span><span style="display:flex;"><span>                q.push(temp);<span style="color:#75715e">//状态入队
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#960050;background-color:#1e0010">标记成已入队。</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>BFS可用于解决两类问题：</p>
+<p>1.从A出发是否存在到达B的路径；DFS也可求</p>
+<p>2.从A出发到达B的<strong>最短</strong>路径；数据小20以内的话, DFS也不是不可以 <strong>题眼</strong></p>
+<h4 id="整体思路">整体思路</h4>
+<p>其思路为从图上一个节点出发，访问先访问其直接相连的子节点，若子节点不符合，再问其子节点的子节点，按级别顺序(一层一层)依次访问，直到访问到目标节点。</p>
+<h4 id="步骤">步骤</h4>
+<ul>
+<li>起始：将起点（源点，树的根节点）放入队列中</li>
+<li>扩散：从队列中取出<strong>队头的结点</strong>，将它的相邻结点放入队列，不断重复这一步</li>
+<li>终止：当<strong>队列为空</strong>时，说明我们遍历了所有的能到的结点，整个图能到的点都被搜索了一遍</li>
+</ul>
+<p><strong>相关视频</strong>（简介里有视频讲义和题目）</p>
+<p><a href="https://www.bilibili.com/video/BV1aY411k7DB/?spm_id_from=333.999.0.0">BFS知识点课 | 一节课带你搞懂BFS | 凭什么为什么你怎么知道要用队列?_哔哩哔哩_bilibili</a></p>
+<p><a href="https://www.bilibili.com/video/BV18o4y1r7Nn/?spm_id_from=333.999.0.0">BFS习题课(上) | 从此搞懂搜索题的套路! | 入门必看_哔哩哔哩_bilibili</a></p>
+<p><a href="https://www.bilibili.com/video/BV1xY4y1y7MA/?spm_id_from=333.999.0.0">BFS 习题课(下) | 带你深入浅出 BFS 专题! | 下一站, DP!_哔哩哔哩_bilibili</a></p>
+<h3 id="dp">DP</h3>
+<p><strong>动态规划思路</strong>: dfs暴力 &ndash;&gt; 记忆化搜索 &ndash;&gt; 递推</p>
+<p>1dfs &gt; 2记忆化搜索 &gt; 3逆序递推 &gt; <strong>4顺序递推</strong> &gt; 5优化空间 !</p>
+<p><strong>写出递推公式的方法:</strong></p>
+<p><strong>递推</strong> 的公式 = $dfs$ 向下 <strong>递归</strong> 的公式</p>
+<p><strong>递推</strong> 数组的初始值 = <strong>递归</strong> 的边界</p>
+<p><strong>动态规划做题步骤</strong></p>
+<ol start="27">
+<li>重述问题</li>
+<li>找到最后一步</li>
+<li>去掉最后一步，是否能划分出<strong>子问题</strong></li>
+<li>考虑边界</li>
+</ol>
+<p><strong>dp不会写可以直接写dfs 跑路（最好加个记忆化mem，能剪枝也可以剪枝）</strong></p>
+<p><strong>相关视频</strong>（简介里有视频讲义和题目）</p>
+<p><a href="https://www.bilibili.com/video/BV1r84y1379W/?spm_id_from=333.999.0.0">动态规划(dp)入门 | 这tm才是入门动态规划的正确方式! | dfs记忆化搜索 | 全体起立!!_哔哩哔哩_bilibili</a></p>
+<p><a href="https://www.bilibili.com/video/BV12o4y147ce/?spm_id_from=333.999.0.0">DP之背包问题 | 01背包 + 完全背包 | 逐步推进，深入解析！_哔哩哔哩_bilibili</a></p>
+<p><a href="https://www.bilibili.com/video/BV1B8411R7Xm/?spm_id_from=333.999.0.0">动态规划入门刷题课（上）| 新手必看必学 | dp四部曲_哔哩哔哩_bilibili</a></p>
+<p><a href="https://www.bilibili.com/video/BV1Jp4y1J7W1/?spm_id_from=333.999.0.0">动态规划入门刷题课（下）| 新手入门动态规划必看！！ | dp四步曲_哔哩哔哩_bilibili</a></p>
+<h3 id="图论板子">图论板子</h3>
+<p><strong>堆优化版dijkstra</strong> —— 模板题 AcWing 850. Dijkstra求<strong>最短路</strong> II</p>
+<p>时间复杂度 $O(mlogn)$ ，$n$ 表示点数， $m$ 表示边数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> PII;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n;      <span style="color:#75715e">// 点的数量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> h[N], w[N], e[N], ne[N], idx;       <span style="color:#75715e">// 邻接表存储所有边
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> dist[N];        <span style="color:#75715e">// 存储所有点到1号点的距离
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> st[N];     <span style="color:#75715e">// 存储每个点的最短距离是否已确定
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 求1号点到n号点的最短距离，如果不存在，则返回-1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">dijkstra</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    memset(dist, <span style="color:#ae81ff">0x3f</span>, <span style="color:#66d9ef">sizeof</span> dist);
+</span></span><span style="display:flex;"><span>    dist[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    priority_queue<span style="color:#f92672">&lt;</span>PII, vector<span style="color:#f92672">&lt;</span>PII<span style="color:#f92672">&gt;</span>, greater<span style="color:#f92672">&lt;</span>PII<span style="color:#f92672">&gt;&gt;</span> heap;
+</span></span><span style="display:flex;"><span>    heap.push({<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>});      <span style="color:#75715e">// first存储距离，second存储节点编号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (heap.size())
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">auto</span> t <span style="color:#f92672">=</span> heap.top();
+</span></span><span style="display:flex;"><span>        heap.pop();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> ver <span style="color:#f92672">=</span> t.second, distance <span style="color:#f92672">=</span> t.first;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (st[ver]) <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span>        st[ver] <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> h[ver]; i <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">=</span> ne[i])
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> e[i];
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (dist[j] <span style="color:#f92672">&gt;</span> distance <span style="color:#f92672">+</span> w[i])
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                dist[j] <span style="color:#f92672">=</span> distance <span style="color:#f92672">+</span> w[i];
+</span></span><span style="display:flex;"><span>                heap.push({dist[j], j});
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (dist[n] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0x3f3f3f3f</span>) <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> dist[n];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>floyd算法</strong> —— 模板题 AcWing 854. Floyd求<strong>最短路</strong></p>
+<p>时间复杂度 $(O^3)$ , $n$ 表示点数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">初始化：</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; i <span style="color:#f92672">++</span> )
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;=</span> n; j <span style="color:#f92672">++</span> )
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">==</span> j) d[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> d[i][j] <span style="color:#f92672">=</span> INF;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 算法结束后，d[a][b]表示a到b的最短距离
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">floyd</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; k <span style="color:#f92672">&lt;=</span> n; k <span style="color:#f92672">++</span> )
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; i <span style="color:#f92672">++</span> )
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;=</span> n; j <span style="color:#f92672">++</span> )
+</span></span><span style="display:flex;"><span>                d[i][j] <span style="color:#f92672">=</span> min(d[i][j], d[i][k] <span style="color:#f92672">+</span> d[k][j]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Kruskal算法</strong> —— 模板题 AcWing 859. Kruskal算法求**最小生成树 **</p>
+<p>时间复杂度 $O(mlogm)$ ，$n$ 表示点数， $m$ 表示边数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n, m;       <span style="color:#75715e">// n是点数，m是边数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> p[N];       <span style="color:#75715e">// 并查集的父节点数组
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Edge</span>     <span style="color:#75715e">// 存储边
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a, b, w;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> Edge <span style="color:#f92672">&amp;</span>W)<span style="color:#66d9ef">const</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> w <span style="color:#f92672">&lt;</span> W.w;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}edges[M];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">find</span>(<span style="color:#66d9ef">int</span> x)     <span style="color:#75715e">// 并查集核心操作
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (p[x] <span style="color:#f92672">!=</span> x) p[x] <span style="color:#f92672">=</span> find(p[x]);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> p[x];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">kruskal</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    sort(edges, edges <span style="color:#f92672">+</span> m);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; i <span style="color:#f92672">++</span> ) p[i] <span style="color:#f92672">=</span> i;    <span style="color:#75715e">// 初始化并查集
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> res <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> m; i <span style="color:#f92672">++</span> )
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> edges[i].a, b <span style="color:#f92672">=</span> edges[i].b, w <span style="color:#f92672">=</span> edges[i].w;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        a <span style="color:#f92672">=</span> find(a), b <span style="color:#f92672">=</span> find(b);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">!=</span> b)     <span style="color:#75715e">// 如果两个连通块不连通，则将这两个连通块合并
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        {
+</span></span><span style="display:flex;"><span>            p[a] <span style="color:#f92672">=</span> b;
+</span></span><span style="display:flex;"><span>            res <span style="color:#f92672">+=</span> w;
+</span></span><span style="display:flex;"><span>            cnt <span style="color:#f92672">++</span> ;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (cnt <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> INF;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> res;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>以下算法最好掌握一下。</p>
+<p><img src="https://dn-simplecloud.shiyanlou.com/questions/uid1736686-20240410-1712735700770" alt="图片描述"></p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://localhost:1313/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/%E7%AE%97%E6%B3%95/">算法</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/">蓝桥杯</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        963 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2025-11-07 23:28
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2f2025%2f11%2f%25E8%2593%259D%25E6%25A1%25A5%25E8%25B5%259B%25E5%2589%258D%25E5%25B0%258F%25E8%25AE%25B0-%25E5%25BE%2580%25E6%259C%259F%25E8%25A7%2586%25E9%25A2%2591%25E6%2580%25BB%25E7%25BB%2593%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f2025%2f11%2f%25E8%2593%259D%25E6%25A1%25A5%25E8%25B5%259B%25E5%2589%258D%25E5%25B0%258F%25E8%25AE%25B0-%25E5%25BE%2580%25E6%259C%259F%25E8%25A7%2586%25E9%25A2%2591%25E6%2580%25BB%25E7%25BB%2593%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=%e8%93%9d%e6%a1%a5%e8%b5%9b%e5%89%8d%e5%b0%8f%e8%ae%b0%20%e5%be%80%e6%9c%9f%e8%a7%86%e9%a2%91%e6%80%bb%e7%bb%93&amp;caption=%e8%93%9d%e6%a1%a5%e8%b5%9b%e5%89%8d%e5%b0%8f%e8%ae%b0%20%e5%be%80%e6%9c%9f%e8%a7%86%e9%a2%91%e6%80%bb%e7%bb%93&amp;canonicalUrl=http%3a%2f%2flocalhost%3a1313%2fposts%2f2025%2f11%2f%25E8%2593%259D%25E6%25A1%25A5%25E8%25B5%259B%25E5%2589%258D%25E5%25B0%258F%25E8%25AE%25B0-%25E5%25BE%2580%25E6%259C%259F%25E8%25A7%2586%25E9%25A2%2591%25E6%2580%25BB%25E7%25BB%2593%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=%e8%93%9d%e6%a1%a5%e8%b5%9b%e5%89%8d%e5%b0%8f%e8%ae%b0%20%e5%be%80%e6%9c%9f%e8%a7%86%e9%a2%91%e6%80%bb%e7%bb%93&amp;body=http%3a%2f%2flocalhost%3a1313%2fposts%2f2025%2f11%2f%25E8%2593%259D%25E6%25A1%25A5%25E8%25B5%259B%25E5%2589%258D%25E5%25B0%258F%25E8%25AE%25B0-%25E5%25BE%2580%25E6%259C%259F%25E8%25A7%2586%25E9%25A2%2591%25E6%2580%25BB%25E7%25BB%2593%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f2025%2f11%2f%25E8%2593%259D%25E6%25A1%25A5%25E8%25B5%259B%25E5%2589%258D%25E5%25B0%258F%25E8%25AE%25B0-%25E5%25BE%2580%25E6%259C%259F%25E8%25A7%2586%25E9%25A2%2591%25E6%2580%25BB%25E7%25BB%2593%2f&amp;media=http%3a%2f%2flocalhost%3a1313%2fposts%2f2025%2f11%2f%25E8%2593%259D%25E6%25A1%25A5%25E8%25B5%259B%25E5%2589%258D%25E5%25B0%258F%25E8%25AE%25B0-%25E5%25BE%2580%25E6%259C%259F%25E8%25A7%2586%25E9%25A2%2591%25E6%2580%25BB%25E7%25BB%2593%2f;description=%e8%93%9d%e6%a1%a5%e8%b5%9b%e5%89%8d%e5%b0%8f%e8%ae%b0%20%e5%be%80%e6%9c%9f%e8%a7%86%e9%a2%91%e6%80%bb%e7%bb%93" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2f2025%2f11%2f%25E8%2593%259D%25E6%25A1%25A5%25E8%25B5%259B%25E5%2589%258D%25E5%25B0%258F%25E8%25AE%25B0-%25E5%25BE%2580%25E6%259C%259F%25E8%25A7%2586%25E9%25A2%2591%25E6%2580%25BB%25E7%25BB%2593%2f&amp;title=%e8%93%9d%e6%a1%a5%e8%b5%9b%e5%89%8d%e5%b0%8f%e8%ae%b0%20%e5%be%80%e6%9c%9f%e8%a7%86%e9%a2%91%e6%80%bb%e7%bb%93&amp;summary=%e8%93%9d%e6%a1%a5%e8%b5%9b%e5%89%8d%e5%b0%8f%e8%ae%b0%20%e5%be%80%e6%9c%9f%e8%a7%86%e9%a2%91%e6%80%bb%e7%bb%93&amp;source=http%3a%2f%2flocalhost%3a1313%2fposts%2f2025%2f11%2f%25E8%2593%259D%25E6%25A1%25A5%25E8%25B5%259B%25E5%2589%258D%25E5%25B0%258F%25E8%25AE%25B0-%25E5%25BE%2580%25E6%259C%259F%25E8%25A7%2586%25E9%25A2%2591%25E6%2580%25BB%25E7%25BB%2593%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f2025%2f11%2f%25E8%2593%259D%25E6%25A1%25A5%25E8%25B5%259B%25E5%2589%258D%25E5%25B0%258F%25E8%25AE%25B0-%25E5%25BE%2580%25E6%259C%259F%25E8%25A7%2586%25E9%25A2%2591%25E6%2580%25BB%25E7%25BB%2593%2f&amp;resubmit=true&amp;title=%e8%93%9d%e6%a1%a5%e8%b5%9b%e5%89%8d%e5%b0%8f%e8%ae%b0%20%e5%be%80%e6%9c%9f%e8%a7%86%e9%a2%91%e6%80%bb%e7%bb%93" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=http%3a%2f%2flocalhost%3a1313%2fposts%2f2025%2f11%2f%25E8%2593%259D%25E6%25A1%25A5%25E8%25B5%259B%25E5%2589%258D%25E5%25B0%258F%25E8%25AE%25B0-%25E5%25BE%2580%25E6%259C%259F%25E8%25A7%2586%25E9%25A2%2591%25E6%2580%25BB%25E7%25BB%2593%2f;title=%e8%93%9d%e6%a1%a5%e8%b5%9b%e5%89%8d%e5%b0%8f%e8%ae%b0%20%e5%be%80%e6%9c%9f%e8%a7%86%e9%a2%91%e6%80%bb%e7%bb%93" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=%e8%93%9d%e6%a1%a5%e8%b5%9b%e5%89%8d%e5%b0%8f%e8%ae%b0%20%e5%be%80%e6%9c%9f%e8%a7%86%e9%a2%91%e6%80%bb%e7%bb%93%20http%3a%2f%2flocalhost%3a1313%2fposts%2f2025%2f11%2f%25E8%2593%259D%25E6%25A1%25A5%25E8%25B5%259B%25E5%2589%258D%25E5%25B0%258F%25E8%25AE%25B0-%25E5%25BE%2580%25E6%259C%259F%25E8%25A7%2586%25E9%25A2%2591%25E6%2580%25BB%25E7%25BB%2593%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2f2025%2f11%2f%25E8%2593%259D%25E6%25A1%25A5%25E8%25B5%259B%25E5%2589%258D%25E5%25B0%258F%25E8%25AE%25B0-%25E5%25BE%2580%25E6%259C%259F%25E8%25A7%2586%25E9%25A2%2591%25E6%2580%25BB%25E7%25BB%2593%2f&amp;t=%e8%93%9d%e6%a1%a5%e8%b5%9b%e5%89%8d%e5%b0%8f%e8%ae%b0%20%e5%be%80%e6%9c%9f%e8%a7%86%e9%a2%91%e6%80%bb%e7%bb%93" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=%e8%93%9d%e6%a1%a5%e8%b5%9b%e5%89%8d%e5%b0%8f%e8%ae%b0%20%e5%be%80%e6%9c%9f%e8%a7%86%e9%a2%91%e6%80%bb%e7%bb%93&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2f2025%2f11%2f%25E8%2593%259D%25E6%25A1%25A5%25E8%25B5%259B%25E5%2589%258D%25E5%25B0%258F%25E8%25AE%25B0-%25E5%25BE%2580%25E6%259C%259F%25E8%25A7%2586%25E9%25A2%2591%25E6%2580%25BB%25E7%25BB%2593%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+
+    
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="http://localhost:1313/posts/2025/11/%E8%93%9D%E6%A1%A523%E5%B9%B4%E7%9C%9F%E9%A2%98%E7%9F%A5%E8%AF%86%E7%82%B9/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">蓝桥23年真题知识点</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="http://localhost:1313/posts/2025/11/ai%E5%90%88%E9%9B%86/">
+                    <span class="button__text">AI合集</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2025</span>
+            <span><a href="http://localhost:1313/">Miles-ya</a></span>
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span><a href="http://localhost:1313/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>由 <a href="http://gohugo.io">Hugo</a> 驱动</span><span>由 <a href="https://github.com/rhazdon">Djordje Atlialp</a> 用 &#10084; 制作</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="http://localhost:1313/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>
