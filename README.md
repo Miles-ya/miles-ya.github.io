@@ -1,7 +1,5 @@
 # 我的个人博客
 
-本博客以 Obsidian 进行内容创作，使用 Hugo 生成静态站点，并通过 GitHub Actions 自动构建与部署到 GitHub Pages，便于在本地用 Obsidian 管理笔记，同时实现自动化发布与更新。
-
 ## 一点想法
 
 拥有一个博客是我一直以来渴望做的事。
@@ -27,15 +25,15 @@ Github pages 我也折腾了好几次，从 Hexo 到现在的 Hugo 始终直到�
 
 ## 日志
 
-- 2023-11-01: Hugo 初始化上传与 GitHub Actions 工作流配置
-- 2023-11-03: 主题与基础网站设置配置完成、 obsidian 仓库 YAML 格式统一化，增加 title 属性
-- 2025-11-04: 添加 CC BY-NC-ND 4.0 许可说明（新建 `LICENSE`）、更新 `README.md` 的许可提示，并在站点层覆盖 `layouts/partials/footer.html` 以在页面底部显示许可声明
-- 2025-11-05: 跟新了博客导航栏，增加“关于”、“分类”；对插件Obsidian-Hugo-Sync优化了 YAML Frontmatter 处理机制
-- 2025-11-06:开发插件 Obsidian-Hugo-Sync 自动图片同步和路径转换功能
-- 2025-11-07:修复插件 Obsidian-Hugo-Sync 图片路径转换功能（真是服了ai改来改去，就是一个小问题他都改不明白，还得我自己找bug）
-- 2025-11-08:完成全部可公开文章同步
+- 2023-11-01: Hugo 初始化上传与 GitHub Actions 工作流配置。
+- 2023-11-03: 主题与基础网站设置配置完成、 obsidian 仓库 YAML 格式统一化，增加 title 属性。
+- 2025-11-04: 添加 CC BY-NC-ND 4.0 许可说明（新建 `LICENSE`）、更新 `README.md` 的许可提示，并在站点层覆盖 `layouts/partials/footer.html` 以在页面底部显示许可声明。
+- 2025-11-05: 跟新了博客导航栏，增加“关于”、“分类”；对插件Obsidian-Hugo-Sync优化了 YAML Frontmatter 处理机制。
+- 2025-11-06:开发插件 Obsidian-Hugo-Sync 自动图片同步和路径转换功能。
+- 2025-11-07:修复插件 Obsidian-Hugo-Sync 图片路径转换功能（真是服了ai改来改去，就是一个小问题他都改不明白，还得我自己找bug）。
+- 2025-11-08:完成全部可公开文章同步。
 - 2025-11-09: 更新协议为 CC BY-NC 4.0 ，更新`LICENSE`，更改`README.md`;修复同步后文章图片显示问题；更新网站导航栏布局；修复分类异常问题。
-- 2025-11-09:更新/tags页面布局
+- 2025-11-10:更新/tags页面布局；更新网站导航栏布局；测试发布。
 
 ## 版权声明
 
@@ -57,5 +55,5 @@ Github pages 我也折腾了好几次，从 Hexo 到现在的 Hugo 始终直到�
 
 - GitHub: [@Miles-ya](https://github.com/Miles-ya)
 - X: [朋友圈](https://x.com/Henry____Liu)
-- Email: gqqbzl@outlook.com
+- Email: [gqqbzl@outlook.com](mailto:gqqbzl@outlook.com)
 - 微信公众号: Miles的笔记本

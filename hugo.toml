@@ -1,4 +1,4 @@
-baseURL = "https://example.com"
+baseURL = "https://miles-ya.github.io/Blog/"
 title   = "千里之行"
 languageCode = "zh-cn"
 theme = "hello-friend-ng"
@@ -68,7 +68,7 @@ disableHugoGeneratorInject = false
 
   # 索引页的首页副标题。
   #
-  homeSubtitle = "阅读，写作，看世界。"
+  homeSubtitle = "阅读 · 写作 · 看世界"
 
   # 设置首页背景
   # backgroundImage = "assets/images/background.jpg"
@@ -236,17 +236,15 @@ disableHugoGeneratorInject = false
 
 [menu]
   [[menu.main]]
-    identifier = "about"
+    identifier = "3about"
     name       = "关于"
     url        = "about/"
-    weight = 3 
   [[menu.main]]
-    identifier = "tags"
+    identifier = "2tags"
     name       = "分类"
     url        = "tags/"
-    weight = 2
   [[menu.main]]
-    identifier = "posts"
+    identifier = "1posts"
     name       = "文章"
     url        = "posts/"
-    weight = 1
+

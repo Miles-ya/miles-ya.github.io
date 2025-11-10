@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>青春 on 千里之行</title>
-    <link>http://localhost:1313/tags/%E9%9D%92%E6%98%A5/</link>
+    <link>http://localhost:1313/Blog/tags/%E9%9D%92%E6%98%A5/</link>
     <description>Recent content in 青春 on 千里之行</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sat, 08 Nov 2025 13:12:05 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E9%9D%92%E6%98%A5/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/Blog/tags/%E9%9D%92%E6%98%A5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2024忆青春</title>
-      <link>http://localhost:1313/posts/2025/11/2024%E5%BF%86%E9%9D%92%E6%98%A5/</link>
+      <link>http://localhost:1313/Blog/posts/2025/11/2024%E5%BF%86%E9%9D%92%E6%98%A5/</link>
       <pubDate>Sat, 08 Nov 2025 13:12:05 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2025/11/2024%E5%BF%86%E9%9D%92%E6%98%A5/</guid>
+      <guid>http://localhost:1313/Blog/posts/2025/11/2024%E5%BF%86%E9%9D%92%E6%98%A5/</guid>
       <description>&lt;hr&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;我们不得不承认，青春是一本太仓促的书， 那个时候，我还以为一个瞬间可以成为永远。可后来，什么都变了，连再见也不让人说一声，还真是匆忙。可是你看，这世界一 直在变，就连许多本该永恒的东西，都在不停的破碎着。我所爱的一切也都是这，逝去所带来的空虚感，比未曾拥有更难挨。我 不能活在永恒的悲伤里，我只能说再见。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;是啊！青春是一本太仓促的书。&#xA;这让我想起小学的时光，无忧无虑。&#xA;我想起了数学期中考试的空白卷，那个在周五写完作业也不快乐的周末……&#xA;是啊，曾经那个不想长大的孩子，如今也已成年，很快也要进入社会了。&lt;/p&gt;</description>
     </item>
   </channel>

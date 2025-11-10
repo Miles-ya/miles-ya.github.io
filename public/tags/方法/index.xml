@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>方法 on 千里之行</title>
-    <link>http://localhost:1313/tags/%E6%96%B9%E6%B3%95/</link>
+    <link>http://localhost:1313/Blog/tags/%E6%96%B9%E6%B3%95/</link>
     <description>Recent content in 方法 on 千里之行</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sat, 08 Nov 2025 13:35:31 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%96%B9%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/Blog/tags/%E6%96%B9%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ubuntu 24 Ibus输入法导入dict词库教程</title>
-      <link>http://localhost:1313/posts/2025/11/ubuntu-24-ibus%E8%BE%93%E5%85%A5%E6%B3%95%E5%AF%BC%E5%85%A5dict%E8%AF%8D%E5%BA%93%E6%95%99%E7%A8%8B/</link>
+      <link>http://localhost:1313/Blog/posts/2025/11/ubuntu-24-ibus%E8%BE%93%E5%85%A5%E6%B3%95%E5%AF%BC%E5%85%A5dict%E8%AF%8D%E5%BA%93%E6%95%99%E7%A8%8B/</link>
       <pubDate>Sat, 08 Nov 2025 13:35:31 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2025/11/ubuntu-24-ibus%E8%BE%93%E5%85%A5%E6%B3%95%E5%AF%BC%E5%85%A5dict%E8%AF%8D%E5%BA%93%E6%95%99%E7%A8%8B/</guid>
+      <guid>http://localhost:1313/Blog/posts/2025/11/ubuntu-24-ibus%E8%BE%93%E5%85%A5%E6%B3%95%E5%AF%BC%E5%85%A5dict%E8%AF%8D%E5%BA%93%E6%95%99%E7%A8%8B/</guid>
       <description>&lt;hr&gt;&#xA;&lt;p&gt;我最近刚把为我的主力系统换为ubuntu，简直是太好用了&#xA;缺点也很明显，什么都需要折腾&#xA;我昨天写文章的时候，用自带的ibus输入法，简直了，每敲几个词就要按方向键找一半天&#xA;因此便有了这篇文章&lt;/p&gt;&#xA;&lt;p&gt;这是一个大佬自建拼音输入法词库，百万常用词汇量&#xA;&lt;a href=&#34;https://github.com/wuhgit/CustomPinyinDictiona&#34;&gt;https://github.com/wuhgit/CustomPinyinDictiona&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;从这个仓库的 &lt;a href=&#34;https://github.com/wuhgit/CustomPinyinDictionary/releases&#34;&gt;Releases&lt;/a&gt;下载CustomPinyinDictionary_Fcitx_20250101.tar.gz并解压&lt;/p&gt;&#xA;&lt;p&gt;因为解压后的文件后缀是dict&#xA;我们用txt导入到ibus&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install libime-bin&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libime_pinyindict -d CustomPinyinDictionary_Fcitx.dict CustomPinyinDictionary_Fcitx.txt&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行这两条命令即可转换为txt文件&lt;/p&gt;&#xA;&lt;p&gt;右击任务栏的输入法，选择首选项&lt;/p&gt;&#xA;&lt;p&gt;![Pasted image 20250910101213.png](../../images/ubuntu 24 Ibus输入法导入dict词库教程/Pasted%20image%2020250910101213.png)&lt;/p&gt;&#xA;&lt;p&gt;选择【用户数据-用户词典-导入】&#xA;![Pasted image 20250910101321.png](../../images/ubuntu 24 Ibus输入法导入dict词库教程/Pasted%20image%2020250910101321.png)&lt;/p&gt;&#xA;&lt;p&gt;然后选择你的txt文件，完成导入。&lt;/p&gt;</description>
     </item>
     <item>
       <title>双系统</title>
-      <link>http://localhost:1313/posts/2025/11/%E5%8F%8C%E7%B3%BB%E7%BB%9F/</link>
+      <link>http://localhost:1313/Blog/posts/2025/11/%E5%8F%8C%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Fri, 07 Nov 2025 15:22:23 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2025/11/%E5%8F%8C%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>http://localhost:1313/Blog/posts/2025/11/%E5%8F%8C%E7%B3%BB%E7%BB%9F/</guid>
       <description>&lt;hr&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;建立一个大概50G的分区，根据需求可以更大（NTFS分区）&lt;/li&gt;&#xA;&lt;li&gt;打开dism++，在左侧选择工具箱，然后选择系统还原&lt;/li&gt;&#xA;&lt;li&gt;&lt;img src=&#34;../../images/%E5%8F%8C%E7%B3%BB%E7%BB%9F/Pasted%20image%2020250626104210.png&#34; alt=&#34;Pasted image 20250626104210.png&#34;&gt;&lt;/li&gt;&#xA;&lt;li&gt;点击确定，需等待几分钟&lt;/li&gt;&#xA;&lt;li&gt;使用快捷键 $WIN+R$ ，输入命令 &lt;code&gt;msconfig&lt;/code&gt;。&lt;/li&gt;&#xA;&lt;li&gt;&lt;img src=&#34;../../images/%E5%8F%8C%E7%B3%BB%E7%BB%9F/Pasted%20image%2020250626104829.png&#34; alt=&#34;Pasted image 20250626104829.png&#34;&gt;&lt;/li&gt;&#xA;&lt;li&gt;完成设置&lt;/li&gt;&#xA;&lt;li&gt;在开机时会提示信息，然后让你选择&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
   </channel>
