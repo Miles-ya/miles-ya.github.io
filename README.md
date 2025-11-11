@@ -25,16 +25,16 @@ Github pages 我也折腾了好几次，从 Hexo 到现在的 Hugo 始终直到�
 
 ## 日志
 
-- **2023-11-01**: Hugo 初始化上传与 GitHub Actions 工作流配置。
-- **2023-11-03**: 主题与基础网站设置配置完成、 obsidian 仓库 YAML 格式统一化，增加 title 属性。
-- **2025-11-04**: 添加 CC BY-NC-ND 4.0 许可说明（新建 `LICENSE`）、更新 `README.md` 的许可提示，并在站点层覆盖 `layouts/partials/footer.html` 以在页面底部显示许可声明。
-- **2025-11-05**: 跟新了博客导航栏，增加“关于”、“分类”；对插件Obsidian-Hugo-Sync优化了 YAML Frontmatter 处理机制。
-- **2025-11-06**:开发插件 Obsidian-Hugo-Sync 自动图片同步和路径转换功能。
-- **2025-11-07**:修复插件 Obsidian-Hugo-Sync 图片路径转换功能（真是服了ai改来改去，就是一个小问题他都改不明白，还得我自己找bug）。
-- **2025-11-08**:完成全部可公开文章同步。
-- **2025-11-09**: 更新协议为 CC BY-NC 4.0 ，更新`LICENSE`，更改`README.md`;修复同步后文章图片显示问题；更新网站导航栏布局；修复分类异常问题。
-- **2025-11-10**:更新/tags页面布局；更新网站导航栏布局；测试发布。
-- **2025-11-11**:网站全面上线、安全加固与性能优化。购买域名108104121.xyz；更新域名解析到 cloudflare；更新 toml baseURL 链接；创建 A/AAAA 记录，指向 Cloudflare CDN；创建 CNAME 记录，指向 miles-ya.github.io；启用 Page Shield；启用 “始终使用 HTTPS”；部署通用 SSL 证书；启用 TLS 1.3 0-RTT 和 HTTP/2 优化；启用 HSTS (含 preload 和 include_subdomains)；启用网站分析 (web analytics)；浏览器缓存过期时间由 1 天改为 4 小时；开启分层缓存 (tiered_caching)；启用热链保护 (hotlink: true)；系统自动执行规则集更新；创建 HTTP L7 DDoS 攻击警报通知策略；配置了 security.txt文件，提供标准化的漏洞报告联系方式；测试发布。
+- 2023-11-01: Hugo 初始化上传与 GitHub Actions 工作流配置。
+- 2023-11-03: 主题与基础网站设置配置完成、 obsidian 仓库 YAML 格式统一化，增加 title 属性。
+- 2025-11-04: 添加 CC BY-NC-ND 4.0 许可说明（新建 `LICENSE`）、更新 `README.md` 的许可提示，并在站点层覆盖 `layouts/partials/footer.html` 以在页面底部显示许可声明。
+- 2025-11-05: 跟新了博客导航栏，增加“关于”、“分类”；对插件Obsidian-Hugo-Sync优化了 YAML Frontmatter 处理机制。
+- 2025-11-06:开发插件 Obsidian-Hugo-Sync 自动图片同步和路径转换功能。
+- 2025-11-07:修复插件 Obsidian-Hugo-Sync 图片路径转换功能（真是服了ai改来改去，就是一个小问题他都改不明白，还得我自己找bug）。
+- 2025-11-08:完成全部可公开文章同步。
+- 2025-11-09: 更新协议为 CC BY-NC 4.0 ，更新`LICENSE`，更改`README.md`;修复同步后文章图片显示问题；更新网站导航栏布局；修复分类异常问题。
+- 2025-11-10:更新/tags页面布局；更新网站导航栏布局；测试发布。
+- 2025-11-11:购买域名108104121.xyz；更新域名链接；测试发布。
 
 ## 版权声明
 
