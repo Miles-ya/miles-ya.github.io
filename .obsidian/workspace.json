@@ -11,13 +11,10 @@
             "id": "6b247a4e07312de1",
             "type": "leaf",
             "state": {
-              "type": "bases",
-              "state": {
-                "file": "未命名.base",
-                "viewName": "表格"
-              },
-              "icon": "lucide-table",
-              "title": "未命名"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
