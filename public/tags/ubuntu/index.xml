@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu on 千里之行</title>
-    <link>http://localhost:1313/Blog/tags/ubuntu/</link>
+    <link>http://localhost:1313/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on 千里之行</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sat, 08 Nov 2025 13:35:31 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/Blog/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ubuntu 24 Ibus输入法导入dict词库教程</title>
-      <link>http://localhost:1313/Blog/posts/2025/11/ubuntu-24-ibus%E8%BE%93%E5%85%A5%E6%B3%95%E5%AF%BC%E5%85%A5dict%E8%AF%8D%E5%BA%93%E6%95%99%E7%A8%8B/</link>
+      <link>http://localhost:1313/posts/2025/11/ubuntu-24-ibus%E8%BE%93%E5%85%A5%E6%B3%95%E5%AF%BC%E5%85%A5dict%E8%AF%8D%E5%BA%93%E6%95%99%E7%A8%8B/</link>
       <pubDate>Sat, 08 Nov 2025 13:35:31 +0000</pubDate>
-      <guid>http://localhost:1313/Blog/posts/2025/11/ubuntu-24-ibus%E8%BE%93%E5%85%A5%E6%B3%95%E5%AF%BC%E5%85%A5dict%E8%AF%8D%E5%BA%93%E6%95%99%E7%A8%8B/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;p&gt;我最近刚把为我的主力系统换为ubuntu，简直是太好用了&#xA;缺点也很明显，什么都需要折腾&#xA;我昨天写文章的时候，用自带的ibus输入法，简直了，每敲几个词就要按方向键找一半天&#xA;因此便有了这篇文章&lt;/p&gt;&#xA;&lt;p&gt;这是一个大佬自建拼音输入法词库，百万常用词汇量&#xA;&lt;a href=&#34;https://github.com/wuhgit/CustomPinyinDictiona&#34;&gt;https://github.com/wuhgit/CustomPinyinDictiona&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;从这个仓库的 &lt;a href=&#34;https://github.com/wuhgit/CustomPinyinDictionary/releases&#34;&gt;Releases&lt;/a&gt;下载CustomPinyinDictionary_Fcitx_20250101.tar.gz并解压&lt;/p&gt;&#xA;&lt;p&gt;因为解压后的文件后缀是dict&#xA;我们用txt导入到ibus&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install libime-bin&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libime_pinyindict -d CustomPinyinDictionary_Fcitx.dict CustomPinyinDictionary_Fcitx.txt&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行这两条命令即可转换为txt文件&lt;/p&gt;&#xA;&lt;p&gt;右击任务栏的输入法，选择首选项&lt;/p&gt;&#xA;&lt;p&gt;![Pasted image 20250910101213.png](../../images/ubuntu 24 Ibus输入法导入dict词库教程/Pasted%20image%2020250910101213.png)&lt;/p&gt;&#xA;&lt;p&gt;选择【用户数据-用户词典-导入】&#xA;![Pasted image 20250910101321.png](../../images/ubuntu 24 Ibus输入法导入dict词库教程/Pasted%20image%2020250910101321.png)&lt;/p&gt;&#xA;&lt;p&gt;然后选择你的txt文件，完成导入。&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/2025/11/ubuntu-24-ibus%E8%BE%93%E5%85%A5%E6%B3%95%E5%AF%BC%E5%85%A5dict%E8%AF%8D%E5%BA%93%E6%95%99%E7%A8%8B/</guid>
+      <description>&lt;p&gt;我最近刚把为我的主力系统换为ubuntu，简直是太好用了&#xA;缺点也很明显，什么都需要折腾&#xA;我昨天写文章的时候，用自带的ibus输入法，简直了，每敲几个词就要按方向键找一半天&#xA;因此便有了这篇文章&lt;/p&gt;&#xA;&lt;p&gt;这是一个大佬自建拼音输入法词库，百万常用词汇量&#xA;&lt;a href=&#34;https://github.com/wuhgit/CustomPinyinDictiona&#34;&gt;https://github.com/wuhgit/CustomPinyinDictiona&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;从这个仓库的 &lt;a href=&#34;https://github.com/wuhgit/CustomPinyinDictionary/releases&#34;&gt;Releases&lt;/a&gt;下载CustomPinyinDictionary_Fcitx_20250101.tar.gz并解压&lt;/p&gt;&#xA;&lt;p&gt;因为解压后的文件后缀是dict&#xA;我们用txt导入到ibus&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install libime-bin&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libime_pinyindict -d CustomPinyinDictionary_Fcitx.dict CustomPinyinDictionary_Fcitx.txt&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行这两条命令即可转换为txt文件&lt;/p&gt;&#xA;&lt;p&gt;右击任务栏的输入法，选择首选项&#xA;&lt;img src=&#34;1.png&#34; alt=&#34;1.png&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;选择【用户数据-用户词典-导入】&#xA;&lt;img src=&#34;2.png&#34; alt=&#34;2.png&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;然后选择你的txt文件，完成导入。&lt;/p&gt;</description>
     </item>
     <item>
       <title>win &#43; ubuntu 双系统时间不同步？一招解决！</title>
-      <link>http://localhost:1313/Blog/posts/2025/11/win--ubuntu-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%90%8C%E6%AD%A5%E4%B8%80%E6%8B%9B%E8%A7%A3%E5%86%B3/</link>
+      <link>http://localhost:1313/posts/2025/11/win--ubuntu-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%90%8C%E6%AD%A5%E4%B8%80%E6%8B%9B%E8%A7%A3%E5%86%B3/</link>
       <pubDate>Sat, 08 Nov 2025 13:35:25 +0000</pubDate>
-      <guid>http://localhost:1313/Blog/posts/2025/11/win--ubuntu-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%90%8C%E6%AD%A5%E4%B8%80%E6%8B%9B%E8%A7%A3%E5%86%B3/</guid>
+      <guid>http://localhost:1313/posts/2025/11/win--ubuntu-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%90%8C%E6%AD%A5%E4%B8%80%E6%8B%9B%E8%A7%A3%E5%86%B3/</guid>
       <description>&lt;hr&gt;&#xA;&lt;p&gt;这是一个非常经典的双系统问题，根源在于 Windows 和 Ubuntu&#xA;对硬件时钟（RTC）时间的解释方式不同：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Windows 默认将硬件时间当作“本地时间 (Local Time)”。&lt;/li&gt;&#xA;&lt;li&gt;Ubuntu (以及其他Linux发行版) 默认将硬件时间当作“世界标准时间 (UTC)”。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;这就导致了一个系统调准时间后，另一个系统启动时会错误地解读时间，造成时间偏差。&lt;/p&gt;&#xA;&lt;p&gt;最简单且推荐的解决方法是：让 Ubuntu 使用本地时间（Local&#xA;Time）来同步硬件时钟，而不是 UTC。&lt;/p&gt;&#xA;&lt;p&gt;您只需要在 Ubuntu 的终端里执行下面这一条命令即可：&lt;/p&gt;&#xA;&lt;p&gt;timedatectl set-local-rtc 1 &amp;ndash;adjust-system-clock&lt;/p&gt;&#xA;&lt;p&gt;这个命令的作用是：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;set-local-rtc 1: 告诉系统，硬件时钟（RTC）存储的是本地时间。1代表“是”。&lt;/li&gt;&#xA;&lt;li&gt;&amp;ndash;adjust-system-clock: 同时调整当前的系统时间以匹配。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;执行这个命令后，您可以在 Ubuntu 中手动设置一次正确的时间。之后，当您在两个系统&#xA;之间切换时，时间就应该能保持同步了。&lt;/p&gt;</description>
     </item>
   </channel>
