@@ -1,4 +1,6 @@
 ---
-title: "归档"
-url: [archives]
+
+title: "文章"
+url: [posts]
+
 ---
