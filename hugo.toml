@@ -1,7 +1,14 @@
 baseURL = "https://www.108104121.xyz/"
 title   = "千里之行"
-languageCode = "zh-cn"
 theme = "hello-friend-ng"
+defaultContentLanguage = "zh-cn"
+
+[languages]
+  [languages.zh-cn]
+    languageCode = "zh-cn"
+    hasCJKLanguage = true
+    languageName = "中文"
+    weight = 1
 
 PygmentsCodeFences = true
 PygmentsStyle = "monokai"
@@ -247,4 +254,3 @@ disableHugoGeneratorInject = false
     identifier = "1posts"
     name       = "文章"
     url        = "posts/"
-
