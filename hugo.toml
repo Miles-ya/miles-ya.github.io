@@ -159,10 +159,10 @@ disableHugoGeneratorInject = false
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   # 如果您想在起始页上显示肖像，请取消注释
   #
-  # [params.portrait]
-  #   path     = "/img/image.jpg"
-  #   alt      = "肖像"
-  #   maxWidth = "50px"
+  [params.portrait]
+    path     = "avatar.jpg"
+    alt      = "肖像"
+    maxWidth = "150px"
 
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
   # 插件：Commento
