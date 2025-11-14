@@ -95,7 +95,7 @@ disableHugoGeneratorInject = false
   # 请在此处生成按钮：https://sharingbuttons.io
   # 并将它们添加到您自己的 `layouts/partials/sharing-buttons.html` 中
   #
-  enableSharingButtons = true
+  enableSharingButtons = true 
 
   # 全局语言菜单
   #
