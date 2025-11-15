@@ -136,10 +136,7 @@ disableHugoGeneratorInject = false
     author = true
 
     topText = []
-    bottomText = [
-      "由 <a href=\"http://gohugo.io\">Hugo</a> 驱动",
-      "由 <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a> 用 &#10084; 制作"
-    ]
+    bottomText = [ ]
 
   # 用于 Favicon 的颜色
   #
