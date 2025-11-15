@@ -1,0 +1,104 @@
+<script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<footer class="footer">
+    {{$scratch := newScratch}}
+    {{ range (where .Site.RegularPages "Type" "posts")}}
+    {{$scratch.Add "total" .WordCount}}
+    {{ end }}
+
+    {{$totalWord := $scratch.Get "total" }}
+    {{ $wowWord := div $totalWord 10000}}
+    <div class="footer__inner">
+        <div class="copyright copyright-font">
+            <span>共 {{$totalWord }} 字<br><span id="wowBook"></span></span>
+        </div>
+    </div>
+
+    <script>
+        var wowJSWord = parseFloat("{{ $wowWord }}");
+        const gradeChart = [
+            { minpercent: 40, letter: "写完一本我国著名的<br>四大名著了！" },
+            // { minpercent: 39, letter: "写完一本  的<br>《》了！" },
+            // { minpercent: 38, letter: "写完一本  的<br>《》了！" },
+            { minpercent: 37, letter: "写完一本 贾雷德・戴蒙德 的<br>《枪炮、病菌与钢铁》了！" },
+            // { minpercent: 36, letter: "写完一本  的<br>《》了！" },
+            // { minpercent: 35, letter: "写完一本  的<br>《》了！" },
+            { minpercent: 34, letter: "写完一本 雷・库兹韦尔 的<br>《奇点临近》了！" },
+            // { minpercent: 33, letter: "写完一本  的<br>《》了！" },
+            { minpercent: 32, letter: "写完一本 丹尼尔・卡尼曼 的<br>《思考，快与慢》了！" },
+            { minpercent: 31, letter: "写完一本 柏拉图 的<br>《理想国》了！" },
+            { minpercent: 30, letter: "写完一本 东野圭吾 的<br>《白夜行》了！" },
+            // { minpercent: 29, letter: "写完一本  的<br>《》了！" },
+            { minpercent: 28, letter: "写完一本 纳西姆・尼古拉斯・塔勒布 的<br>《反脆弱》了！" },
+            { minpercent: 27, letter: "写完一本 安德斯・埃利克森 的<br>《刻意练习》了！" },
+            { minpercent: 26, letter: "写完一本 刘震云 的<br>《一句顶一万句》了！" },
+            { minpercent: 25, letter: "写完一本 阿尔文・托夫勒 的<br>《第三次浪潮》了！" },
+            { minpercent: 24, letter: "写完一本 史蒂芬・柯维 的<br>《高效能人士的七个习惯》了！" },
+            { minpercent: 23, letter: "写完一本 钱钟书 的<br>《围城》了！" },
+            { minpercent: 22, letter: "写完一本 理查德・保罗等 的<br>《思辨与立场》了！" },
+            { minpercent: 21, letter: "写完一本 霍华德・马克斯 的<br>《周期》了！" },
+            { minpercent: 20, letter: "写完一本 李笑来 的<br>《把时间当作朋友》了！" },
+            { minpercent: 19, letter: "写完一本 卡罗尔・德韦克 的<br>《终身成长》了！" },
+            { minpercent: 18, letter: "写完一本 乔治・奥威尔 的<br>《一九八四》了！" },
+            // { minpercent: 17, letter: "写完一本  的<br>《》了！" },
+            { minpercent: 16, letter: "写完一本 M.斯科特・派克 的<br>《少有人走的路》了！" },
+            { minpercent: 15, letter: "写完一本 毛姆 的<br>《月亮与六便士》了！" },
+            { minpercent: 14, letter: "写完一本 罗伯特・清崎 的<br>《穷爸爸富爸爸》了！" },
+            { minpercent: 13, letter: "写完一本 罗翔 的<br>《圆圈正义》了！" },
+            { minpercent: 12, letter: "写完一本 周岭 的<br>《认知觉醒》了！" },
+            { minpercent: 11, letter: "写完一本 马歇尔・卢森堡 的<br>《非暴力沟通》了！" },
+            { minpercent: 10, letter: "写完一本 岸见一郎 古贺史健 的<br>《被讨厌的勇气》了！" },
+            { minpercent: 9, letter: "写完一本 余华 的<br>《活着》了！" },
+            { minpercent: 8, letter: "写完一本 古斯塔夫・勒庞 的<br>《乌合之众》了！" },
+            { minpercent: 7, letter: "写完一本 维克多・弗兰克尔 的<br>《活出生命的意义》了！" },
+            { minpercent: 6, letter: "写完一本 戴维・巴赫 约翰・戴维・曼恩 的<br>《拿铁因素》了！" },
+            { minpercent: 5, letter: "写完一本 赫尔曼・黑塞 的<br>《悉达多》了！" },
+            { minpercent: 0, letter: "还在努力更新中..<br>加油！加油啦！" }
+
+        ];
+
+        const getLetterGrade = (gradeAsPercent) => {
+            const grade = gradeChart.find(
+                (grade) => gradeAsPercent >= grade.minpercent
+            );
+            return grade.letter;
+        };
+        document.getElementById("wowBook").innerHTML = getLetterGrade(wowJSWord)
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            pangu.autoSpacingPage();
+        });
+    </script>
+
+    {{if or (.Site.Params.footer.trademark) (.Site.Params.footer.author) (.Site.Params.footer.copyright)
+    (.Site.Params.footer.rss) (.Site.Params.footer.topText) }}
+    <div class="footer__inner">
+
+        <div class="footer__content">
+
+            {{ if .Site.Params.footer.trademark }}<span>&copy; {{ .Site.Params.footer.trademark }}</span>{{ end }}
+            {{ if .Site.Params.footer.author }}<span><a href="{{ .Site.BaseURL }}">{{ .Site.Params.Author.name
+                    }}</a></span>{{ end }}
+            {{ if .Site.Params.footer.copyright }}<span>{{ .Site.Copyright| safeHTML }}</span>{{ end }}
+            {{ if .Site.Params.footer.rss }}<span><a href="{{ " posts/index.xml" | absLangURL }}" target="_blank"
+                    title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-rss">
+                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                        <circle cx="5" cy="19" r="1"></circle>
+                    </svg></a></span>{{ end }}
+            {{ range .Site.Params.footer.topText }}<span>{{ . | safeHTML}}</span>{{ end }}
+        </div>
+    </div>
+    {{ end }}
+    {{with .Site.Params.footer.bottomText}}
+    <div class="footer__inner">
+        <div class="footer__content">
+            {{ range . }}<span>{{ . | safeHTML}}</span>{{ end }}
+        </div>
+    </div>
+    {{ end }}
+</footer>
