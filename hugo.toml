@@ -74,8 +74,7 @@ disableHugoGeneratorInject = false
   images = [""]
 
   # 索引页的首页副标题。
-  #
-  homeSubtitle = "阅读 · 写作 · 看世界"
+  homeSubtitle = "阅读・写作・看世界"
 
   # 设置首页背景
   # backgroundImage = "assets/images/background.jpg"
@@ -237,6 +236,10 @@ disableHugoGeneratorInject = false
   [[params.social]]
     name = "github"
     url  = "https://github.com/Miles-ya"
+
+  [[params.social]]
+    name = "rss"
+    url  = "https://www.108104121.xyz/posts/index.xml"
 
 [menu]
   [[menu.main]]
