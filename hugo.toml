@@ -1,5 +1,5 @@
-baseURL = "https://www.108104121.xyz/"
-title   = "千里之行"
+baseURL = "https://miles-ya.github.io/"
+title   = "林远的一亩三分地"
 theme = "hello-friend-ng"
 defaultContentLanguage = "zh-cn"
 
@@ -227,7 +227,7 @@ disableHugoGeneratorInject = false
   #
   [[params.social]]
     name = "X"
-    url  = "https://x.com/Henry____Liu"
+    url  = "https://x.com/Linyuan_Milesya"
 
   [[params.social]]
     name = "email"
