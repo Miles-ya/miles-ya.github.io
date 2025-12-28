@@ -65,4 +65,3 @@ Github pages 我也折腾了好几次，从 Hexo 到现在的 Hugo 始终直到�
 - GitHub: [@Miles-ya](https://github.com/Miles-ya)
 - X: [朋友圈](https://x.com/Henry____Liu)
 - Email: [gqqbzl@outlook.com](mailto:gqqbzl@outlook.com)
-- 微信公众号: Miles的笔记本
