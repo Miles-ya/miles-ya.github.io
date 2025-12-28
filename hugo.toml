@@ -243,13 +243,17 @@ disableHugoGeneratorInject = false
 
 [menu]
   [[menu.main]]
-    identifier = "3about"
+    identifier = "4about"
     name       = "关于"
     url        = "about/"
   [[menu.main]]
-    identifier = "2tags"
+    identifier = "3tags"
     name       = "分类"
     url        = "tags/"
+  [[menu.main]]
+    identifier = "2tools"
+    name       = "工具"
+    url        = "tools/"
   [[menu.main]]
     identifier = "1posts"
     name       = "文章"
