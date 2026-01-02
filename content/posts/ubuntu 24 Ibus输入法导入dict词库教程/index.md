@@ -1,10 +1,15 @@
 ---
-
 title: ubuntu 24 Ibus输入法导入dict词库教程
-tags: ["工具", "方法", "ubuntu"]
-date: 2025-11-08T13:35:31.767Z
+date: '2025-11-08T21:35:48+08:00'
 draft: false
-
+tags:
+  - 工具
+  - 方法
+  - ubuntu
+category: 项目
+description: 介绍如何将自定义拼音词库导入Ubuntu 24的Ibus输入法，提升输入效率
+updated: '2025-09-13 14:13:01'
+created: '2025-09-10'
 ---
 
 我最近刚把为我的主力系统换为ubuntu，简直是太好用了
@@ -20,6 +25,7 @@ https://github.com/wuhgit/CustomPinyinDictiona
 因为解压后的文件后缀是dict
 我们用txt导入到ibus
 
+
 ```bash
 sudo apt install libime-bin
 libime_pinyindict -d CustomPinyinDictionary_Fcitx.dict CustomPinyinDictionary_Fcitx.txt
@@ -28,9 +34,11 @@ libime_pinyindict -d CustomPinyinDictionary_Fcitx.dict CustomPinyinDictionary_Fc
 执行这两条命令即可转换为txt文件
 
 右击任务栏的输入法，选择首选项
- ![1.png](1.png)
+
+[](Pasted%20image%2020250910101213.png)
+
 
 选择【用户数据-用户词典-导入】
- ![2.png](2.png)
+[](Pasted%20image%2020250910101321.png)
 
 然后选择你的txt文件，完成导入。

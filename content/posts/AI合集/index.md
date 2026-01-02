@@ -1,11 +1,16 @@
 ---
-tags: ["AI", "工具"]
-title: "AI合集"
-date: 2025-11-07T15:28:17.218Z
+title: AI合集
+date: '2025-11-03T20:25:01+08:00'
 draft: false
+tags:
+  - AI
+  - 工具
+category: 资源
+description: 介绍多种AI工具及其功能，涵盖内容生成、办公自动化、会议纪要等场景。
+updated: '2025-08-03 16:23:51'
+created: '2025-04-18'
 ---
 
----
 ## 聊天/内容生成
 
 | AI工具名称     | 功能                             | 入口                                                                           |
@@ -182,7 +187,7 @@ draft: false
 | aiXcoder                           | 基于深度学习代码生成技术的智能编程机器人                                    | [链接](https://www.aixcoder.com)                                                                                |
 | 商汤代码小浣熊                            | 代码生成补全翻译重构……                                            | [链接](https://raccoon.sensetime.com/code)                                                             |
 | CodeArts Snap                      | 覆盖代码生成、研发知识问答、单元测试用例生成、代码解释、代码注释、代码翻译、代码调试、代码检查等八大研发场景  | [链接](https://www.huaweicloud.com/product/codeartside/snap.html)               |
-| 天工智码                               | 基于昆仑天工模型的AI代码工具                                         | [链接](https://sky-code.singularity-ai.com/index.html                                 |
+| 天工智码                               | 基于昆仑天工模型的AI代码工具                                         | [链接](https://sky-code.singularity-ai.com/index.html#/)                                 |
 
 ## 模型训练/部署
 

@@ -1,11 +1,16 @@
 ---
 title: win + ubuntu 双系统时间不同步？一招解决！
-tags: ["工具", "ubuntu"]
-date: 2025-11-08T13:35:25.727Z
+date: '2025-11-08T21:35:27+08:00'
 draft: false
+tags:
+  - 工具
+  - ubuntu
+category: 项目
+description: 解决Windows和Ubuntu双系统时间不同步问题，通过设置Ubuntu使用本地时间同步硬件时钟。
+updated: '2025-09-13 14:13:09'
+created: '2025-09-13'
 ---
 
----
 这是一个非常经典的双系统问题，根源在于 Windows 和 Ubuntu
   对硬件时钟（RTC）时间的解释方式不同：
 
