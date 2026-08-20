@@ -6,7 +6,7 @@
 {{ if .IsHome }}{{ $description = .Site.Params.homeSubtitle | default $description }}{{ else if .Description }}{{ $description = .Description }}{{ else if .Summary }}{{ $description = .Summary | plainify | truncate 160 }}{{ end }}
 <meta name="description" content="{{ $description }}">
 <meta name="keywords" content="{{ .Site.Params.keywords }}{{ with .Params.tags }}, {{ delimit . ", " }}{{ end }}">
-<meta name="theme-color" content="#f4f1ea">
+<meta name="theme-color" content="#faf9f6">
 <link rel="canonical" href="{{ .Permalink }}">
 <title>{{ if .IsHome }}{{ .Site.Params.brandTitle | default .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Params.brandTitle | default .Site.Title }}{{ end }}</title>
 <script>

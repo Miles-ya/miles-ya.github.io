@@ -4,6 +4,7 @@
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.site-nav');
   const comments = document.querySelector('.comments[data-repository]');
+  let themeTransitionTimer;
 
   function utterancesTheme() {
     return root.dataset.theme === 'dark' ? 'github-dark' : 'boxy-light';
@@ -30,6 +31,14 @@
   }
 
   function setTheme(theme) {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      window.clearTimeout(themeTransitionTimer);
+      root.classList.add('theme-transitioning');
+      void document.body.offsetWidth;
+      themeTransitionTimer = window.setTimeout(function () {
+        root.classList.remove('theme-transitioning');
+      }, 280);
+    }
     root.dataset.theme = theme;
     localStorage.setItem('theme', theme);
     if (themeButton) {
