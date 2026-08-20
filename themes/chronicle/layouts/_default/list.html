@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{ $paginator := .Paginate .Pages }}
+<main class="index-page">
+  <header class="page-header">
+    <p class="eyebrow">ARCHIVE</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}<div class="page-intro">{{ . }}</div>{{ end }}
+  </header>
+  <div class="archive-list home-archive">
+    {{ partial "archive.html" (dict "pages" $paginator.Pages "summaries" true) }}
+  </div>
+  {{ partial "pagination.html" . }}
+</main>
+{{ end }}

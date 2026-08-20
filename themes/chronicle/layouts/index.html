@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{ $limit := .Site.Params.homepagePostLimit | default 20 }}
+{{ $posts := where .Site.RegularPages "Type" "posts" }}
+{{ $recent := first $limit $posts }}
+<main class="home-page">
+  <header class="publication-intro">
+    <p class="eyebrow">PERSONAL ARCHIVE · SINCE 2023</p>
+    <h1>{{ .Site.Params.brandTitle | default "MILES" }}</h1>
+    <p class="dek">{{ .Site.Params.homeSubtitle }}</p>
+  </header>
+  <div class="section-heading">
+    <h2>最近写作</h2>
+    <span>{{ len $recent }} 篇记录</span>
+  </div>
+  <div class="archive-list home-archive">
+    {{ partial "archive.html" (dict "pages" $recent "summaries" true) }}
+  </div>
+  <p class="archive-more"><a href="{{ "posts/" | relURL }}">查看全部文章 <span aria-hidden="true">→</span></a></p>
+</main>
+{{ end }}

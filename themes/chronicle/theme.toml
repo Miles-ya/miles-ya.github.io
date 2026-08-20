@@ -1,0 +1,11 @@
+name = "Chronicle"
+license = "MIT"
+licenselink = "https://github.com/Miles-ya/miles-ya.github.io/blob/main/themes/chronicle/LICENSE"
+description = "A quiet editorial Hugo theme for a personal archive."
+homepage = "https://miles-ya.github.io/"
+tags = ["blog", "editorial", "archive", "minimal"]
+min_version = "0.128.0"
+
+[author]
+  name = "Miles"
+  homepage = "https://miles-ya.github.io/"

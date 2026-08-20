@@ -1,0 +1,17 @@
+{{ $scratch := newScratch }}
+{{ range where .Site.RegularPages "Type" "posts" }}{{ $scratch.Add "words" .WordCount }}{{ end }}
+{{ $total := $scratch.Get "words" | default 0 }}
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="archive-progress"><span>共写下 {{ lang.FormatNumber 0 $total }} 字</span><span id="writing-milestone">仍在继续</span></p>
+    <p class="footer-links">
+      <span>© {{ now.Format "2006" }} Miles</span>
+      <a href="{{ "posts/index.xml" | relURL }}">RSS</a>
+      <a href="https://github.com/Miles-ya" rel="me noopener">GitHub</a>
+      <a href="https://x.com/Linyuan_Milesya" rel="me noopener">X</a>
+      <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license noopener">CC BY-NC 4.0</a>
+    </p>
+  </div>
+</footer>
+<script>window.chronicleWordCount = {{ $total }};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" onload="pangu.spacingPage()"></script>

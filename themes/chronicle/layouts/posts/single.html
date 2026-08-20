@@ -1,0 +1,32 @@
+{{ define "main" }}
+<main class="article-page">
+  <article>
+    <header class="article-header">
+      <p class="eyebrow">WRITING / {{ .Date.Format "2006" }}</p>
+      <h1>{{ .Title | markdownify }}</h1>
+      {{ with .Description }}<p class="article-dek">{{ . }}</p>{{ end }}
+      <div class="article-meta">
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006年01月02日" }}</time>
+        <span>约 {{ .ReadingTime }} 分钟</span>
+        {{ with .Params.categories }}<span>{{ range $index, $category := . }}{{ if $index }}、{{ end }}<a href="{{ printf "categories/%s/" ($category | urlize) | relURL }}">{{ $category }}</a>{{ end }}</span>{{ end }}
+      </div>
+    </header>
+    {{ with .Params.Cover }}<figure class="article-cover"><img src="{{ . | absURL }}" alt="{{ $.Title }}">{{ with $.Params.CoverCaption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}</figure>{{ end }}
+    {{ if .Params.toc }}<aside class="toc"><p>目录</p>{{ .TableOfContents }}</aside>{{ end }}
+    {{ with .Params.Audio }}<div class="article-audio"><audio controls src="{{ . }}">您的浏览器不支持音频播放。</audio></div>{{ end }}
+    <div class="prose">{{ .Content }}</div>
+    {{ with .Params.tags }}
+    <footer class="article-footer">
+      <div class="article-tags"><span>归档于</span>{{ range . }}<a href="{{ printf "tags/%s/" (. | urlize) | relURL }}">{{ . }}</a>{{ end }}</div>
+    </footer>
+    {{ end }}
+  </article>
+  {{ partial "post-nav.html" . }}
+  {{ if .Site.Params.Utterances.Repository }}
+  <section class="comments" aria-label="评论"
+    data-repository="{{ .Site.Params.Utterances.Repository }}"
+    data-label="{{ .Site.Params.Utterances.Label }}"
+    data-issue-term="{{ .Site.Params.Utterances.IssueTerm }}"></section>
+  {{ end }}
+</main>
+{{ end }}

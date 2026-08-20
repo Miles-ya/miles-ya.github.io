@@ -1,0 +1,18 @@
+{{ define "main" }}
+<main class="index-page">
+  <header class="page-header">
+    <p class="eyebrow">INDEX</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}<div class="page-intro">{{ . }}</div>{{ end }}
+  </header>
+  <div class="term-index">
+    {{ range .Data.Terms.ByCount }}
+      <a class="term-row" href="{{ .Page.RelPermalink }}">
+        <span class="term-name">{{ .Page.Title }}</span>
+        <span class="term-leader" aria-hidden="true"></span>
+        <span class="term-count">{{ .Count | lang.FormatNumber 0 }}</span>
+      </a>
+    {{ end }}
+  </div>
+</main>
+{{ end }}

@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ if .Params.noindex }}<meta name="robots" content="noindex">{{ else }}<meta name="robots" content="index, follow">{{ end }}
+<meta name="author" content="{{ .Params.author | default .Site.Params.author.name }}">
+{{ $description := .Site.Params.description }}
+{{ if .IsHome }}{{ $description = .Site.Params.homeSubtitle | default $description }}{{ else if .Description }}{{ $description = .Description }}{{ else if .Summary }}{{ $description = .Summary | plainify | truncate 160 }}{{ end }}
+<meta name="description" content="{{ $description }}">
+<meta name="keywords" content="{{ .Site.Params.keywords }}{{ with .Params.tags }}, {{ delimit . ", " }}{{ end }}">
+<meta name="theme-color" content="#f4f1ea">
+<link rel="canonical" href="{{ .Permalink }}">
+<title>{{ if .IsHome }}{{ .Site.Params.brandTitle | default .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Params.brandTitle | default .Site.Title }}{{ end }}</title>
+<script>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  }());
+</script>
+{{ $style := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
+{{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" href="{{ .RelPermalink }}" title="{{ $.Site.Title }}">{{ end }}
+{{ template "_internal/schema.html" . }}
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}

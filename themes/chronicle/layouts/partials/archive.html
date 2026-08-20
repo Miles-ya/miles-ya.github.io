@@ -1,0 +1,18 @@
+{{ range .pages.GroupByDate "2006" }}
+<section class="archive-year" aria-labelledby="year-{{ .Key }}">
+  <h2 class="year-label" id="year-{{ .Key }}">{{ .Key }}</h2>
+  <div class="archive-entries">
+    {{ range .Pages }}
+    <article class="archive-entry">
+      <time class="archive-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01.02" }}</time>
+      <div class="archive-copy">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ if $.summaries }}
+          <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 108 }}{{ end }}</p>
+        {{ end }}
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,14 +1,7 @@
 baseURL = "https://miles-ya.github.io/"
-title   = "林远的小站"
-theme = "hello-friend-ng"
+title   = "MILES"
+theme = "chronicle"
 defaultContentLanguage = "zh-cn"
-
-[languages]
-  [languages.zh-cn]
-    languageCode = "zh-cn"
-    hasCJKLanguage = true
-    languageName = "中文"
-    weight = 1
 
 PygmentsCodeFences = true
 PygmentsStyle = "monokai"
@@ -34,6 +27,13 @@ disableRSS     = false
 disableSitemap = false
 disable404     = false
 disableHugoGeneratorInject = false
+
+[languages]
+  [languages.zh-cn]
+    languageCode = "zh-cn"
+    hasCJKLanguage = true
+    languageName = "中文"
+    weight = 1
 
 [pagination]
   disableAliases = false
@@ -62,6 +62,8 @@ disableHugoGeneratorInject = false
   series   = "series"
 
 [params]
+  brandTitle     = "MILES"
+  homepagePostLimit = 20
   dateform        = "2006年1月2日"
   dateformShort   = "1月2日"
   dateformNum     = "2006-01-02"
@@ -243,18 +245,27 @@ disableHugoGeneratorInject = false
 
 [menu]
   [[menu.main]]
+    identifier = "0home"
+    name       = "首页"
+    url        = "/"
+    weight     = 10
+  [[menu.main]]
     identifier = "4about"
     name       = "关于"
     url        = "about/"
+    weight     = 50
   [[menu.main]]
     identifier = "3tags"
     name       = "分类"
     url        = "tags/"
+    weight     = 30
   [[menu.main]]
     identifier = "2tools"
     name       = "工具"
     url        = "tools/"
+    weight     = 40
   [[menu.main]]
     identifier = "1posts"
     name       = "文章"
     url        = "posts/"
+    weight     = 20
