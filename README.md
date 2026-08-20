@@ -1,5 +1,7 @@
 # 我的个人博客
 
+一个持续更新的个人数字刊物，记录阅读、写作与我理解世界的过程。
+
 ## 一点想法
 
 拥有一个博客是我一直以来渴望做的事。
@@ -19,7 +21,7 @@ Github pages 我也折腾了好几次，从 Hexo 到现在的 Hugo 始终直到�
 - [Obsidian](https://obsidian.md/) - Markdown 编辑器，用于内容创作和管理
 - [Hugo Exporter](https://github.com/Miles-ya/ObsidianHugoExporter) obsidian插件，因为没有找到特别合适的就自己写了一个，目前还没有官方社区收录
 - [Hugo](https://gohugo.io/) - 静态网站生成器
-- [Hello Friend NG](https://github.com/rhazdon/hugo-theme-hello-friend-ng) - Hugo 主题
+- Chronicle - 为本站设计的独立 Hugo 主题
 - GitHub Pages - 网站托管
 - GitHub Actions - 自动化部署
 
@@ -41,6 +43,7 @@ Github pages 我也折腾了好几次，从 Hexo 到现在的 Hugo 始终直到�
 - 2025-12-16:网站成功接入 Google Search Console、Bing Webmaster Tools 及百度资源平台。
 - 2025-12-28:新增工具菜单。
 - 2026-01-02:将博客名称更改为”林远的小站“；吸取被朋友定位的教训，使用cc对全部文章进行审查，去除隐私及敏感信息。
+- 2026-08-19:新建并启用独立 Chronicle 主题，将站点刊名更新为 MILES；以个人数字刊物和时间档案为方向，重构首页、文章归档、分类索引、阅读页、页脚及移动端，完善全局字体、浅深色模式与 Utterances 主题同步；整理91篇文章的发布日期，并为跨月份调整保留旧 URL alias，避免历史链接失效。
 
 ## 版权声明
 
@@ -56,10 +59,10 @@ Github pages 我也折腾了好几次，从 Hexo 到现在的 Hugo 始终直到�
 - **署名** — 您必须给出适当的署名，提供指向本许可协议的链接，同时标明是否（对原始作品）作出了修改。
 - **非商业性使用** — 您不得将本作品用于商业目的。
 
-主题 hello-friend-ng 的许可证请参见 [hello-friend-ng/LICENSE.md](https://github.com/rhazdon/hugo-theme-hello-friend-ng/blob/37fbce29a55302ee523671d19b62327399608852/LICENSE.md)。
+主题 Chronicle 使用 MIT 许可证，许可文本保存在 [themes/chronicle/LICENSE](themes/chronicle/LICENSE)。
 
 ## 联系方式
 
 - GitHub: [@Miles-ya](https://github.com/Miles-ya)
-- X: [朋友圈](https://x.com/Henry____Liu)
+- X: [@Linyuan_Milesya](https://x.com/Linyuan_Milesya)
 - Email: [gqqbzl@gmail.com](mailto:gqqbzl@gmail.com)
