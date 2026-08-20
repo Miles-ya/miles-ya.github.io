@@ -1,6 +1,8 @@
 ---
 title: 1.1 安装Rust环境
-date: '2025-11-08T21:35:52+08:00'
+date: '2025-09-14T21:35:52+08:00'
+aliases:
+  - '/posts/2025/11/1.1-安装rust环境/'
 draft: false
 tags:
   - RUST

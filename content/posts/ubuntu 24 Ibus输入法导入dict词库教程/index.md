@@ -1,6 +1,8 @@
 ---
 title: ubuntu 24 Ibus输入法导入dict词库教程
-date: '2025-11-08T21:35:48+08:00'
+date: '2025-09-10T21:35:48+08:00'
+aliases:
+  - '/posts/2025/11/ubuntu-24-ibus输入法导入dict词库教程/'
 draft: false
 tags:
   - 工具

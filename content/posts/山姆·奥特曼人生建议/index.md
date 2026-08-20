@@ -1,6 +1,8 @@
 ---
 title: 山姆·奥特曼人生建议
-date: '2025-10-11T09:31:07+08:00'
+date: '2025-08-14T09:31:07+08:00'
+aliases:
+  - '/posts/2025/10/山姆奥特曼人生建议/'
 draft: false
 category: 资源
 tags:

@@ -1,6 +1,8 @@
 ---
 title: 英语思维提示词
-date: '2025-08-23T10:16:02+08:00'
+date: '2025-07-06T10:16:02+08:00'
+aliases:
+  - '/posts/2025/08/英语思维提示词/'
 draft: false
 category: 资源
 tags:

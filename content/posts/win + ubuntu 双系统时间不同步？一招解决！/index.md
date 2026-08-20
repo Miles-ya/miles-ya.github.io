@@ -1,6 +1,8 @@
 ---
 title: win + ubuntu 双系统时间不同步？一招解决！
-date: '2025-11-08T21:35:27+08:00'
+date: '2025-09-13T21:35:27+08:00'
+aliases:
+  - '/posts/2025/11/win--ubuntu-双系统时间不同步一招解决/'
 draft: false
 tags:
   - 工具

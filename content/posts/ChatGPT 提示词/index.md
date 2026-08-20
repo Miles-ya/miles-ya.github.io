@@ -1,6 +1,8 @@
 ---
 title: ChatGPT 提示词
-date: '2025-11-03T20:25:09+08:00'
+date: '2025-07-03T20:25:09+08:00'
+aliases:
+  - '/posts/2025/11/chatgpt-提示词/'
 draft: false
 tags:
   - 提示词

@@ -1,6 +1,8 @@
 ---
 title: 瑚琏少年社群
-date: '2025-11-03T20:24:34+08:00'
+date: '2025-06-20T20:24:34+08:00'
+aliases:
+  - '/posts/2025/11/瑚琏少年社群/'
 draft: false
 原文: https://nv7c0vlndbn.feishu.cn/docx/PF0ddQdJooFM2uxk55Yc6BIhnBb
 tags:

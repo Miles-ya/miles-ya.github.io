@@ -1,6 +1,8 @@
 ---
 title: gemini-cli安装步骤
-date: '2025-11-03T20:25:26+08:00'
+date: '2025-07-19T20:25:26+08:00'
+aliases:
+  - '/posts/2025/11/gemini-cli安装步骤/'
 draft: false
 tags:
   - AI

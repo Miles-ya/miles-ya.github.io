@@ -1,6 +1,8 @@
 ---
 title: AI合集
-date: '2025-11-03T20:25:01+08:00'
+date: '2025-04-18T20:25:01+08:00'
+aliases:
+  - '/posts/2025/11/ai合集/'
 draft: false
 tags:
   - AI

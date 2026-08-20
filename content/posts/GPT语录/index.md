@@ -1,6 +1,8 @@
 ---
 title: GPT语录
-date: '2025-11-08T21:12:14+08:00'
+date: '2025-05-16T21:12:14+08:00'
+aliases:
+  - '/posts/2025/11/gpt语录/'
 draft: false
 tags:
   - 个人规划

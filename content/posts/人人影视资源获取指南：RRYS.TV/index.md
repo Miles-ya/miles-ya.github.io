@@ -1,6 +1,8 @@
 ---
 title: 人人影视资源获取指南：RRYS.TV
-date: '2025-11-03T20:24:57+08:00'
+date: '2025-03-20T20:24:57+08:00'
+aliases:
+  - '/posts/2025/11/人人影视资源获取指南rrys.tv/'
 draft: false
 tags:
   - 电影

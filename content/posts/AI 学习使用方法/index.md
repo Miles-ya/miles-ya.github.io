@@ -1,6 +1,8 @@
 ---
 title: AI 学习使用方法
-date: '2025-11-03T20:24:49+08:00'
+date: '2025-07-06T20:24:49+08:00'
+aliases:
+  - '/posts/2025/11/ai-学习使用方法/'
 draft: false
 tags:
   - AI
