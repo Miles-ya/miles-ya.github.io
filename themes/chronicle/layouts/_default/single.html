@@ -5,5 +5,11 @@
     <h1>{{ .Title }}</h1>
   </header>
   <article class="prose page-prose">{{ .Content }}</article>
+  {{ if .Site.Params.Utterances.Repository }}
+  <section class="comments" aria-label="评论"
+    data-repository="{{ .Site.Params.Utterances.Repository }}"
+    data-label="{{ .Site.Params.Utterances.Label }}"
+    data-issue-term="{{ .Site.Params.Utterances.IssueTerm }}"></section>
+  {{ end }}
 </main>
 {{ end }}
