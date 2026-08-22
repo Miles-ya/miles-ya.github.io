@@ -64,6 +64,7 @@ disableHugoGeneratorInject = false
 [params]
   brandTitle     = "MILES"
   homepagePostLimit = 20
+  siteStartDate  = "2025-11-01"
   dateform        = "2006年1月2日"
   dateformShort   = "1月2日"
   dateformNum     = "2006-01-02"

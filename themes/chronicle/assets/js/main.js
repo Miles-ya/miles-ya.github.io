@@ -56,6 +56,19 @@
 
   loadUtterances();
 
+  document.querySelectorAll('#vercount_value_site_pv, #vercount_value_site_uv').forEach(function (counter) {
+    const observer = new MutationObserver(function () {
+      if (/禁用|错误|失败|error|failed/i.test(counter.textContent)) {
+        counter.textContent = '—';
+        observer.disconnect();
+      }
+    });
+    observer.observe(counter, { childList: true, characterData: true, subtree: true });
+    window.setTimeout(function () {
+      if (counter.textContent.trim() === '统计中') counter.textContent = '—';
+    }, 8000);
+  });
+
   if (menuButton && nav) {
     menuButton.addEventListener('click', function () {
       const open = menuButton.getAttribute('aria-expanded') === 'true';

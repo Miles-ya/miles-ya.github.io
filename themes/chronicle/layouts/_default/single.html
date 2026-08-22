@@ -5,6 +5,7 @@
     <h1>{{ .Title }}</h1>
   </header>
   <article class="prose page-prose">{{ .Content }}</article>
+  {{ if .Params.siteInfo }}{{ partial "site-record.html" . }}{{ end }}
   {{ if .Site.Params.Utterances.Repository }}
   <section class="comments" aria-label="评论"
     data-repository="{{ .Site.Params.Utterances.Repository }}"

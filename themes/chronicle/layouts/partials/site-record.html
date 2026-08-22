@@ -1,0 +1,47 @@
+{{- $posts := where .Site.RegularPages "Type" "posts" -}}
+{{- $words := newScratch -}}
+{{- range $posts }}{{ $words.Add "total" .WordCount }}{{ end -}}
+{{- $wordTotal := $words.Get "total" | default 0 -}}
+{{- $startDate := time.AsTime (.Site.Params.siteStartDate | default "2025-11-01") -}}
+{{- $runningDays := add (div (sub now.Unix $startDate.Unix) 86400) 1 -}}
+{{- $latest := index (sort $posts "Date" "desc") 0 -}}
+{{- $activityDays := div (sub now.Unix $latest.Date.Unix) 86400 -}}
+
+<section class="site-record" aria-labelledby="site-record-title">
+  <header class="site-record-header">
+    <h2 id="site-record-title">站点档案</h2>
+    <p>SITE RECORD · SINCE {{ $startDate.Format "2006" }}</p>
+  </header>
+  <dl class="site-record-grid">
+    <div class="site-record-item">
+      <dt>文章</dt>
+      <dd><strong>{{ len $posts }}</strong><span>篇</span></dd>
+    </div>
+    <div class="site-record-item">
+      <dt>运行</dt>
+      <dd><strong>{{ $runningDays }}</strong><span>天</span></dd>
+    </div>
+    <div class="site-record-item">
+      <dt>文字</dt>
+      <dd><strong>{{ printf "%.1fk" (div $wordTotal 1000.0) }}</strong><span>字</span></dd>
+    </div>
+    <div class="site-record-item">
+      <dt>最近更新</dt>
+      <dd class="site-record-relative">
+        {{- if le $activityDays 0 -}}
+          <strong>今天</strong>
+        {{- else -}}
+          <strong>{{ $activityDays }}</strong><span>天前</span>
+        {{- end -}}
+      </dd>
+    </div>
+    <div class="site-record-item">
+      <dt>累计访问</dt>
+      <dd><strong id="vercount_value_site_pv" aria-live="polite">统计中</strong><span>次</span></dd>
+    </div>
+    <div class="site-record-item">
+      <dt>访客计数</dt>
+      <dd><strong id="vercount_value_site_uv" aria-live="polite">统计中</strong><span>人</span></dd>
+    </div>
+  </dl>
+</section>
