@@ -282,9 +282,27 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .site-record-header h2 { margin: 0; font: 600 .92rem/1.3 var(--sans); letter-spacing: .05em; }
 .site-record-header p { margin: 0; color: var(--muted); font: .68rem/1 var(--mono); letter-spacing: .08em; }
-.site-record-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; }
-.site-record-item { min-width: 0; padding: 24px 0 22px; border-bottom: 1px solid var(--border); }
-.site-record-item:nth-last-child(-n + 3) { border-bottom: 0; }
+.site-pledge { padding: 28px 0 36px; }
+.site-pledge-intro { display: flex; align-items: baseline; justify-content: space-between; gap: 28px; }
+.site-pledge-title { margin: 0; font: 500 1.35rem/1.3 var(--serif); letter-spacing: -.02em; }
+.site-pledge-note { margin: 0; color: var(--muted); font: .82rem/1.6 var(--serif); }
+.site-pledge-track { position: relative; height: 1px; margin-top: 30px; background: var(--border); }
+.site-pledge-track span {
+  position: absolute; top: 0; bottom: 0; left: 0; width: var(--pledge-progress);
+  background: var(--foreground);
+}
+.site-pledge-track span::after {
+  content: ""; position: absolute; top: 50%; right: 0; width: 7px; height: 7px;
+  border: 2px solid var(--background); border-radius: 50%; background: var(--foreground);
+  transform: translate(50%, -50%);
+}
+.site-pledge-dates { display: flex; justify-content: space-between; margin-top: 10px; color: var(--faint); font: .64rem/1 var(--mono); }
+.site-pledge-meta { margin: 20px 0 0; color: var(--muted); font: .68rem/1.6 var(--mono); }
+.site-record-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: clamp(32px, 6vw, 72px); row-gap: 34px; margin: 0;
+}
+.site-record-item { min-width: 0; padding: 0; }
 .site-record-item dt { margin-bottom: 8px; color: var(--muted); font: .68rem/1.3 var(--mono); letter-spacing: .05em; }
 .site-record-item dd { display: flex; align-items: baseline; gap: 6px; margin: 0; }
 .site-record-item strong {
@@ -342,9 +360,9 @@ img { display: block; max-width: 100%; height: auto; }
   .prose pre { margin-right: -16px; margin-left: -16px; border-right: 0; border-left: 0; }
   .site-record { margin-top: 64px; }
   .site-record-header { align-items: flex-start; flex-direction: column; gap: 8px; }
-  .site-record-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .site-record-item:nth-last-child(-n + 3) { border-bottom: 1px solid var(--border); }
-  .site-record-item:nth-last-child(-n + 2) { border-bottom: 0; }
+  .site-pledge-intro { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .site-pledge-track { margin-top: 26px; }
+  .site-record-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; row-gap: 30px; }
   .post-navigation { grid-template-columns: 1fr; gap: 30px; }
   .post-nav-next { text-align: left; }
   .footer-inner { align-items: flex-start; flex-direction: column; padding: 32px 0 40px; }

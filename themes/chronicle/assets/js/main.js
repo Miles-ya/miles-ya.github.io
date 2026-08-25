@@ -56,7 +56,12 @@
 
   loadUtterances();
 
+  const isLocalPreview = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
   document.querySelectorAll('#vercount_value_site_pv, #vercount_value_site_uv').forEach(function (counter) {
+    if (isLocalPreview) {
+      counter.textContent = '—';
+      return;
+    }
     const observer = new MutationObserver(function () {
       if (/禁用|错误|失败|error|failed/i.test(counter.textContent)) {
         counter.textContent = '—';
@@ -68,6 +73,12 @@
       if (counter.textContent.trim() === '统计中') counter.textContent = '—';
     }, 8000);
   });
+  if (!isLocalPreview) {
+    const vercount = document.createElement('script');
+    vercount.src = 'https://events.vercount.one/js';
+    vercount.defer = true;
+    document.head.appendChild(vercount);
+  }
 
   if (menuButton && nav) {
     menuButton.addEventListener('click', function () {

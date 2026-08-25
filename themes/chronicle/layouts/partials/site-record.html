@@ -4,6 +4,10 @@
 {{- $wordTotal := $words.Get "total" | default 0 -}}
 {{- $startDate := time.AsTime (.Site.Params.siteStartDate | default "2025-11-01") -}}
 {{- $runningDays := add (div (sub now.Unix $startDate.Unix) 86400) 1 -}}
+{{- $goalDate := time.AsTime (.Site.Params.siteGoalDate | default "2035-11-01") -}}
+{{- $pledgeDays := add (div (sub $goalDate.Unix $startDate.Unix) 86400) 1 -}}
+{{- $remainingDays := sub $pledgeDays $runningDays -}}
+{{- $pledgeProgress := mul (div (float $runningDays) $pledgeDays) 100 -}}
 {{- $latest := index (sort $posts "Date" "desc") 0 -}}
 {{- $activityDays := div (sub now.Unix $latest.Date.Unix) 86400 -}}
 
@@ -12,6 +16,20 @@
     <h2 id="site-record-title">站点档案</h2>
     <p>SITE RECORD · SINCE {{ $startDate.Format "2006" }}</p>
   </header>
+  <div class="site-pledge" style="--pledge-progress: {{ printf "%.2f%%" $pledgeProgress }};">
+    <div class="site-pledge-intro">
+      <p class="site-pledge-title">写到 {{ $goalDate.Format "2006" }}</p>
+      <p class="site-pledge-note">愿十年后回看，这里仍在更新。</p>
+    </div>
+    <div class="site-pledge-track" role="img" aria-label="十年计划已完成 {{ printf "%.1f" $pledgeProgress }}%">
+      <span></span>
+    </div>
+    <div class="site-pledge-dates">
+      <time datetime="{{ $startDate.Format "2006-01-02" }}">{{ $startDate.Format "2006.01.02" }}</time>
+      <time datetime="{{ $goalDate.Format "2006-01-02" }}">{{ $goalDate.Format "2006.01.02" }}</time>
+    </div>
+    <p class="site-pledge-meta">完成 {{ printf "%.1f" $pledgeProgress }}% · 距目标还有 {{ $remainingDays }} 天</p>
+  </div>
   <dl class="site-record-grid">
     <div class="site-record-item">
       <dt>文章</dt>

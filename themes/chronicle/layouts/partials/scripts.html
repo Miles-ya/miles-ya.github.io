@@ -1,6 +1,5 @@
 {{ $script := resources.Get "js/main.js" | minify | fingerprint }}
 <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
-<script src="https://events.vercount.one/js" defer></script>
 {{ if .Page.Store.Get "hasMermaid" }}
 <script type="module">
   import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
