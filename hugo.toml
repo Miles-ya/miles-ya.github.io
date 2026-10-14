@@ -44,7 +44,7 @@ disableHugoGeneratorInject = false
   [services.rss]
       # RSS feed 中项目的最大数量。
       limit = 42
-      
+
 #   [services.disqus]
 #     shortname = 'your-disqus-shortname'
 #   [services.googleAnalytics]
@@ -72,7 +72,7 @@ disableHugoGeneratorInject = false
   dateformNumTime = "2006-01-02 15:04"
 
   # 主要用于文档头部的元数据
-  # 
+  #
   description = "一个关于阅读、写作和生活感悟的个人博客，分享技术心得、学习笔记和成长思考。"
   keywords = "个人博客, 技术分享, 生活感悟, 阅读笔记, 学习心得"
   images = [""]
@@ -92,12 +92,12 @@ disableHugoGeneratorInject = false
   disableReadOtherPosts = false
 
   # 启用主题切换
-  # 
+  #
   # 此选项启用主题的切换功能。
   # 默认情况下，此选项是关闭的。
   # 主题会遵循操作系统的 prefers-color-scheme 设置。
   # 启用此选项后，页面用户可以设置他想要的主题方案。
-  enableThemeToggle = true 
+  enableThemeToggle = true
 
   # 分享按钮
   #
@@ -105,7 +105,7 @@ disableHugoGeneratorInject = false
   # 请在此处生成按钮：https://sharingbuttons.io
   # 并将它们添加到您自己的 `layouts/partials/sharing-buttons.html` 中
   #
-  enableSharingButtons = true 
+  enableSharingButtons = true
 
   # 全局语言菜单
   #
@@ -127,7 +127,7 @@ disableHugoGeneratorInject = false
   # plausibleScriptSource = 'https://plausible.io/js/script.js'
 
   [params.author]
-    name = "Miles-ya" 
+    name = "Miles-ya"
 
   # 自定义页脚
   # 如果您愿意，可以轻松地用您自己的内容覆盖默认页脚。
@@ -158,10 +158,10 @@ disableHugoGeneratorInject = false
     # logoCursorColor    = "#67a2c9"
     # 设置为有效的 CSS 时间值以更改动画持续时间，"0s" 禁用。
     # logoCursorAnimate  = "2s"
-    # 将当前的 url 路径名附加到 logoText 
+    # 将当前的 url 路径名附加到 logoText
     # logoCursorPathname = true
 
-  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   # 插件：首页肖像
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   # 如果您想在起始页上显示肖像，请取消注释
@@ -171,7 +171,7 @@ disableHugoGeneratorInject = false
     alt      = "肖像"
     maxWidth = "150px"
 
-  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   # 插件：Commento
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   # Commento 不仅仅是一个您可以嵌入的评论小部件，
@@ -185,7 +185,7 @@ disableHugoGeneratorInject = false
   # [params.commento]
   #   url = ""
 
-  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   # 插件：Utteranc.es
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   # Utteranc.es 是一个基于 GitHub issues 构建的轻量级评论小部件。
@@ -200,7 +200,7 @@ disableHugoGeneratorInject = false
   #   用于 GitHub issues 的标签
   #
     label      = "comment"
-  # 
+  #
   #   博客文章 <-> Issue 映射。此参数可选。可能的值有：
   #      - pathname
   #      - url
@@ -223,9 +223,9 @@ disableHugoGeneratorInject = false
   #      - gruvbox-dark
   #
     theme      = "preferred-color-scheme"
-  # 
+  #
 
-  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   # 插件：社交图标
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   #
@@ -271,3 +271,8 @@ disableHugoGeneratorInject = false
     name       = "文章"
     url        = "posts/"
     weight     = 20
+  [[menu.main]]
+    identifier = "travelling"
+    name       = "开往"
+    url        = "https://www.travellings.cn/go.html"
+    weight     = 45
