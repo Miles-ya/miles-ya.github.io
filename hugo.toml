@@ -144,9 +144,9 @@ disableHugoGeneratorInject = false
   # 用于 Favicon 的颜色
   #
   [params.favicon.color]
-    mask = "#1b1c1d"
-    msapplication = "#1b1c1d"
-    theme = "#1b1c1d"
+    mask = "#0b1522"
+    msapplication = "#0b1522"
+    theme = "#0b1522"
 
   [params.logo]
     logoMark     = ">"
