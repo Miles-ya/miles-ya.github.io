@@ -1,0 +1,20 @@
+views:
+  - type: table
+    name: 视图
+    filters:
+      and:
+        - file.ext == "md"
+        - file.folder.contains("周报")
+    order:
+      - file.name
+      - file.path
+      - created
+      - date
+      - category
+      - updated
+      - title
+      - tags
+    columnSize:
+      file.name: 70
+      file.path: 448
+      note.category: 105
