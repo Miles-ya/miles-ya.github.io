@@ -8,13 +8,17 @@ views:
     order:
       - file.name
       - file.path
-      - created
-      - date
-      - category
-      - updated
       - title
+      - category
       - tags
+      - date
+      - created
+      - updated
     columnSize:
       file.name: 70
-      file.path: 448
+      file.path: 296
+      note.title: 204
       note.category: 105
+      note.tags: 260
+      note.date: 194
+      note.updated: 149
