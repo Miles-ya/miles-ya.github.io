@@ -1,48 +1,15 @@
 baseURL = "https://miles-ya.github.io/"
 title   = "MILES"
 theme   = "chronicle"
-defaultContentLanguage = "zh-cn"
-enableRobotsTXT = true
-
-copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-
-[languages]
-  [languages.zh-cn]
-    languageCode = "zh-cn"
-    hasCJKLanguage = true
-    languageName = "中文"
-    weight = 1
-
-[pagination]
-  pagerSize = 20
-
-[services]
-  [services.rss]
-    limit = 42
-
-[permalinks]
-  posts = "/posts/:year/:month/:title/"
-
-[taxonomies]
-  tag      = "tags"
-  category = "categories"
-  series   = "series"
+hasCJKLanguage = true
 
 [params]
-  brandTitle        = "MILES"
-  homeSubtitle      = "阅读・写作・看世界"
-  description       = "一个关于阅读、写作和生活感悟的个人博客，分享技术心得、学习笔记和成长思考。"
-  keywords          = "个人博客, 技术分享, 生活感悟, 阅读笔记, 学习心得"
-  homepagePostLimit = 20
-  siteStartDate     = "2025-11-01"
-  siteGoalDate      = "2035-11-01"
+  homeSubtitle = "阅读・写作・看世界"
+  description  = "一个关于阅读、写作和生活感悟的个人博客，分享技术心得、学习笔记和成长思考。"
+  keywords     = "个人博客, 技术分享, 生活感悟, 阅读笔记, 学习心得"
 
   [params.author]
     name = "Miles-ya"
-
-  [params.favicon.color]
-    mask          = "#0b1522"
-    msapplication = "#0b1522"
 
   [params.utterances]
     repository = "Miles-ya/miles-ya.github.io"
@@ -51,32 +18,26 @@ copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_
 
 [menu]
   [[menu.main]]
-    identifier = "0home"
-    name       = "首页"
-    url        = "/"
-    weight     = 10
+    name   = "首页"
+    url    = "/"
+    weight = 10
   [[menu.main]]
-    identifier = "1posts"
-    name       = "文章"
-    url        = "posts/"
-    weight     = 20
+    name   = "文章"
+    url    = "posts/"
+    weight = 20
   [[menu.main]]
-    identifier = "3tags"
-    name       = "分类"
-    url        = "tags/"
-    weight     = 30
+    name   = "分类"
+    url    = "tags/"
+    weight = 30
   [[menu.main]]
-    identifier = "2tools"
-    name       = "工具"
-    url        = "tools/"
-    weight     = 40
+    name   = "工具"
+    url    = "tools/"
+    weight = 40
   [[menu.main]]
-    identifier = "travelling"
-    name       = "开往"
-    url        = "https://www.travellings.cn/go.html"
-    weight     = 45
+    name   = "开往"
+    url    = "https://www.travellings.cn/go.html"
+    weight = 45
   [[menu.main]]
-    identifier = "4about"
-    name       = "关于"
-    url        = "about/"
-    weight     = 50
+    name   = "关于"
+    url    = "about/"
+    weight = 50
